@@ -14,8 +14,9 @@ View at [github.com](http://github.com/Cration/cration.github.io)
   {% endfor %}
 </ul>
 
-## Under construction
+### Under construction
 
 This blog is still under construction.
 
+![建设中]({{ site.img_path }}/UnderConstructionPage.gif)
 
