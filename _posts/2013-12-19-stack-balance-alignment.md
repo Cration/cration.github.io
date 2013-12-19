@@ -14,10 +14,15 @@ tags: [asm, 理解计算机]
 #####函数调用
 　　在本阶段，处理器将执行call指令，具体操作是：将指令寄存器eip压栈，并跳转到被调用函数的起始地址。相当于连续执行了push和jmp指令。
 #####处理ebp寄存器
-　　。
-#####保护寄存器状态
-　　。
+　　ebp作为基址指针寄存器（base pointer<sup>[【2】](#【2】)</sup>），最常见的应用场景便是通过对ebp附加偏移来访问堆栈中的变量。对于一个特定的函数而言，ebp通常是不变的。这一阶段常见的操作是：
+
+    push ebp
+    mov ebp, esp
 #####分配局部变量空间
+　　局部变量存在于堆栈中，这也是为何局部变量的访问往往比全局变量更快的原因。为局部变量分配空间的操作很简单：
+
+    sub esp, #      ;'#'号表示一个立即数，是局部变量占用总空间的大小
+#####保护寄存器状态
 　　。
 #####执行函数
 　　。
@@ -37,3 +42,4 @@ tags: [asm, 理解计算机]
 
 ###参考
 <span id="【1】"></span>【1】 [http://www.unixwiz.net/techtips/win32-callconv-asm.html](http://www.unixwiz.net/techtips/win32-callconv-asm.html)
+<span id="【2】"></span>【2】 [http://www.swansontec.com/sregisters.html](http://www.swansontec.com/sregisters.html)
