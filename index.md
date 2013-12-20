@@ -4,8 +4,6 @@ title: Summer Coral
 ---
 {% include JB/setup %}
 
-View at [github.com](http://github.com/Cration/cration.github.io)
-
 ## Articles
 
 <ul class="posts">
