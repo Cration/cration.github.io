@@ -1,8 +1,12 @@
-{% if site.safe and site.JB.sharing.provider and page.JB.sharing != false %}
+{% if site.JB.sharing.provider and page.JB.sharing != false %}
 
 {% case site.JB.sharing.provider %}
 {% when "custom" %}
   {% include custom/sharing %}
+{% when "JiaThis" %}
+  {% include JB/sharing-providers/JiaThis %}
+{% when "BaiduShare" %}
+  {% include JB/sharing-providers/BaiduShare %}
 {% endcase %}
 
 {% endif %}
