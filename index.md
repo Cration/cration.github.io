@@ -14,7 +14,5 @@ title: Summer Coral
 
 ### Under construction
 
-This blog is still under construction.
-
 ![建设中]({{ site.img_path }}/UnderConstructionPage.gif)
 
