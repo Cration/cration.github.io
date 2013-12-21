@@ -53,7 +53,7 @@ tags: [asm, 理解计算机]
 
 　　思路1：进入函数后，将ebp寄存器对齐到16字节，然后再分配局部变量空间。
 
-　　分析：如果这么做，那局部变量将可以通过ebp的偏移来访问，并且是16字节对齐，但在函数执行之前入栈的参数就无法正确访问了，因为编译器默认(ebp + 8)是第一个参数。如此看来，在函数内部进行处理似乎不太容易实现栈对齐。那么，如果在函数外部做一些处理呢？我们来看看开源编码器[x264](http://www.videolan.org/developers/x264.html)是怎么做的：
+　　分析：如果这么做，那局部变量将可以通过ebp的偏移来访问，并且是16字节对齐，但在函数执行之前入栈的参数就无法正确访问了，因为编译器默认(ebp + 8)是第一个参数。如此看来，在函数内部进行处理似乎不太容易实现栈对齐。那么，如果在函数外部做一些处理呢？我们来看看开源编码器[x264](http://www.videolan.org/developers/x264.html)是怎么做的<sup>[【3】](#【3】)</sup>：
 {% highlight asm %}
 ;-----------------------------------------------------------------------------
 ; void stack_align( void (*func)(void*), void *arg );
@@ -62,7 +62,7 @@ cglobal stack_align
     push ebp
     mov  ebp, esp
     sub  esp, 12
-    and  esp, ~15
+    and  esp, ~31
     mov  ecx, [ebp+8]
     mov  edx, [ebp+12]
     mov  [esp], edx
@@ -80,3 +80,4 @@ cglobal stack_align
 ##参考
 <span id="【1】"></span>【1】 [http://www.unixwiz.net/techtips/win32-callconv-asm.html](http://www.unixwiz.net/techtips/win32-callconv-asm.html)
 <span id="【2】"></span>【2】 [http://www.swansontec.com/sregisters.html](http://www.swansontec.com/sregisters.html)
+<span id="【3】"></span>【3】 [http://git.videolan.org/?p=x264.git;a=blob_plain;f=common/x86/cpu-a.asm;hb=refs/heads/master](http://git.videolan.org/?p=x264.git;a=blob_plain;f=common/x86/cpu-a.asm;hb=refs/heads/master)
