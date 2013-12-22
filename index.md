@@ -16,3 +16,5 @@ title: Summer Coral
 
 ![建设中]({{ site.img_path }}/UnderConstructionPage.gif)
 
+<script type="text/javascript" src="http://js.tongji.linezing.com/3386010/tongji.js"></script>
+<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/3386010/tongji.gif"/></a></noscript>
