@@ -7,7 +7,8 @@ tags: []
 ---
 {% include JB/setup %}
 
-```python
+{% highlight python %}
+python
 @requires_authorization
 def somefunc(param1='', param2=0):
     '''A docstring'''
@@ -20,6 +21,7 @@ class SomeClass:
 
 >>> message = '''interpreter
 ... prompt'''
-```
+{% endhighlight %}
+
 
 $$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
