@@ -5,12 +5,12 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 pygments: true
 markdown: kramdown
-#description_length: 140
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
 title : Cration's Blog
+subtitle: Do one thing and do it well.
 tagline: Site Tagline
 author :
   name : Cration
