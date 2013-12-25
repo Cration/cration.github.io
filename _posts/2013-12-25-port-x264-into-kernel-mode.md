@@ -471,88 +471,97 @@ sources
       
     SOURCES=x264kerneldll.c \  
             x264_kernel.rc \  
-            common\bitstream.c \  
-            common\cabac.c \  
-            common\common.c \  
-            common\cpu.c \  
-            common\dct.c \  
-            common\deblock.c \  
-            common\frame.c \  
-            common\macroblock.c \  
-            common\mc.c \  
-            common\mvpred.c \  
-            common\opencl.c \  
-            common\osdep.c \  
-            common\pixel.c \  
-            common\predict.c \  
-            common\quant.c \  
-            common\rectangle.c \  
-            common\set.c \  
-            common\threadpool.c \  
-            common\vlc.c \  
-            common\win32thread.c \  
-            common\x86\bitstream-a.asm \  
-            common\x86\cabac-a.asm \  
-            common\x86\const-a.asm \  
-            common\x86\cpu-a.asm \  
-            common\x86\dct-32.asm \  
-            common\x86\dct-64.asm \  
-            common\x86\dct-a.asm \  
-            common\x86\deblock-a.asm \  
-            common\x86\mc-a.asm \  
-            common\x86\mc-a2.asm \  
-            common\x86\pixel-32.asm \  
-            common\x86\pixel-a.asm \  
-            common\x86\predict-a.asm \  
-            common\x86\quant-a.asm \  
-            common\x86\sad16-a.asm \  
-            common\x86\trellis-64.asm \  
-            common\x86\x86inc.asm \  
-            common\x86\x86util.asm \  
-            common\x86\mc-c.asm \  
-            common\x86\mc-c.c \  
-            common\x86\predict-c.c \  
-            encoder\analyse.c \  
-            encoder\cabac.c \  
-            encoder\cavlc.c \  
-            encoder\encoder.c \  
-            encoder\lookahead.c \  
-            encoder\macroblock.c \  
-            encoder\me.c \  
-            encoder\ratecontrol.c \  
-            encoder\rdo.c \  
-            encoder\set.c \  
-            encoder\slicetype.c \  
-            encoder\slicetype-cl.c \  
-            filters\filters.c \  
-            filters\video\cache.c \  
-            filters\video\crop.c \  
-            filters\video\depth.c \  
-            filters\video\fix_vfr_pts.c \  
-            filters\video\internal.c \  
-            filters\video\resize.c \  
-            filters\video\select_every.c \  
-            filters\video\source.c \  
-            filters\video\video.c \  
-            input\avs.c \  
-            input\ffms.c \  
-            input\input.c \  
-            input\lavf.c \  
-            input\raw.c \  
-            input\thread.c \  
-            input\timecode.c \  
-            input\y4m.c \  
-            output\flv.c \  
-            output\flv_bytestream.c \  
-            output\matroska.c \  
-            output\matroska_ebml.c \  
-            output\mp4.c \  
-            output\mp4_lsmash.c \  
-            output\raw.c  
-      
-    TARGET_DESTINATION=wdf  
+            stub_common_bitstream.c \  
+            stub_common_cabac.c \  
+            stub_common_common.c \  
+            stub_common_cpu.c \  
+            stub_common_dct.c \  
+            stub_common_deblock.c \  
+            stub_common_frame.c \  
+            stub_common_macroblock.c \  
+            stub_common_mc.c \  
+            stub_common_mvpred.c \  
+            stub_common_opencl.c \  
+            stub_common_osdep.c \  
+            stub_common_pixel.c \  
+            stub_common_predict.c \  
+            stub_common_quant.c \  
+            stub_common_rectangle.c \  
+            stub_common_set.c \  
+            stub_common_threadpool.c \  
+            stub_common_vlc.c \  
+            stub_common_win32thread.c \  
+            stub_common_x86_bitstream-a.asm \  
+            stub_common_x86_cabac-a.asm \  
+            stub_common_x86_const-a.asm \  
+            stub_common_x86_cpu-a.asm \  
+            stub_common_x86_dct-32.asm \  
+            stub_common_x86_dct-64.asm \  
+            stub_common_x86_dct-a.asm \  
+            stub_common_x86_deblock-a.asm \  
+            stub_common_x86_mc-a.asm \  
+            stub_common_x86_mc-a2.asm \  
+            stub_common_x86_pixel-32.asm \  
+            stub_common_x86_pixel-a.asm \  
+            stub_common_x86_predict-a.asm \  
+            stub_common_x86_quant-a.asm \  
+            stub_common_x86_sad16-a.asm \  
+            stub_common_x86_trellis-64.asm \  
+            stub_common_x86_x86inc.asm \  
+            stub_common_x86_x86util.asm \  
+            stub_common_x86_mc-c.asm \  
+            stub_common_x86_mc-c.c \  
+            stub_common_x86_predict-c.c \  
+            stub_encoder_analyse.c \  
+            stub_encoder_cabac.c \  
+            stub_encoder_cavlc.c \  
+            stub_encoder_encoder.c \  
+            stub_encoder_lookahead.c \  
+            stub_encoder_macroblock.c \  
+            stub_encoder_me.c \  
+            stub_encoder_ratecontrol.c \  
+            stub_encoder_rdo.c \  
+            stub_encoder_set.c \  
+            stub_encoder_slicetype.c \  
+            stub_encoder_slicetype-cl.c \  
+            stub_filters_filters.c \  
+            stub_filters_video_cache.c \  
+            stub_filters_video_crop.c \  
+            stub_filters_video_depth.c \  
+            stub_filters_video_fix_vfr_pts.c \  
+            stub_filters_video_internal.c \  
+            stub_filters_video_resize.c \  
+            stub_filters_video_select_every.c \  
+            stub_filters_video_source.c \  
+            stub_filters_video_video.c \  
+            stub_input_avs.c \  
+            stub_input_ffms.c \  
+            stub_input_input.c \  
+            stub_input_lavf.c \  
+            stub_input_raw.c \  
+            stub_input_thread.c \  
+            stub_input_timecode.c \  
+            stub_input_y4m.c \  
+            stub_output_flv.c \  
+            stub_output_flv_bytestream.c \  
+            stub_output_matroska.c \  
+            stub_output_matroska_ebml.c \  
+            stub_output_mp4.c \  
+            stub_output_mp4_lsmash.c \  
+            stub_output_raw  
+  
+  
+TARGET_DESTINATION=wdf  
 
+　　由于WDK的build工具要求sources文件中列出的所有源文件都在当前目录或当前目录的父目录下，不能直接将子目录中的源文件添加到sources中，所以采取了文件包含的方法规避了这个问题。在当前目录下建立一个文件，文件内容只是`#include "xxx.h"`
 
+(http://stackoverflow.com/questions/411841/is-it-possible-to-make-microsoft-build-exe-include-sources-from-remote-directori)
+
+把所有inline改成__inline
+
+#define S_ISREG(x) (((x) & S_IFMT) == S_IFREG)
+改为
+#define S_ISREG(x) (((x) & 0170000) == (0100000))  
 
 
 （编辑中）
