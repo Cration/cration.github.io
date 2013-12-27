@@ -1,0 +1,6 @@
+<li class="post">
+    <span class="date">{{ post.date | date_to_string  }}</span> &raquo;
+    <a class="title" href="{{ site.url  }}{{ post.url  }}">{{post.title  }}</a>
+
+    <p class="excerpt">{{ post.content | extract_excerpt  }}</p>
+</li>

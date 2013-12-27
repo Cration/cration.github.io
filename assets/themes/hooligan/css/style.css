@@ -409,3 +409,16 @@ div.sidebar section img.icon {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
+
+ul.posts li p.excerpt {
+    font-size: 90%;
+    margin: 0;
+    padding-left: 2em;
+    color: #999
+}
+/*#post p.excerpt {
+    background: #dddddd;
+    font-style: italic;
+    padding: 0.8em;
+}*/
+
