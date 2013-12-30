@@ -8,11 +8,9 @@ tags: []
 {% include JB/setup %}
 
 <p class="excerpt">
-{::comment}
 <!--excerpt-->
 本文会讲解怎样将x264移植到内核态中并创建内核dll。
 <!--excerpt-->
-{:/comment}
 </p>
 
 ##文件准备
