@@ -1,16 +1,20 @@
 ---
 layout: page
 title: Summer Coral
-subtitle: hehe
 ---
 {% include JB/setup %}
 
 ## Articles
 
 <ul class="posts">
-  {% for post in site.posts %}
-    {% include post_item.html  %}
-  {% endfor %}
+    {% for post in site.posts %}
+        {% capture summary %}{{post.content | split:'<!--more-->' |first }}{% endcapture%}
+        <li class="post">
+            <span class="date">{{ post.date | date_to_string  }}</span> &raquo;
+            <a class="title" href="{{ site.url }}{{ post.url }}">{{post.title }}</a>
+            {{ summary }}
+        </li>
+    {% endfor %}
 </ul>
 
 ### Under construction
