@@ -7,6 +7,10 @@ tags: []
 ---
 {% include JB/setup %}
 
+　　markdown格式测试所用。
+
+<!--more-->
+
 {% highlight python %}
 python
 @requires_authorization
