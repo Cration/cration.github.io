@@ -2,7 +2,7 @@
 layout: post
 title: "x264内核移植"
 description: ""
-category: ""
+category: "编程"
 tags: [x264, mingw, 驱动开发]
 ---
 {% include JB/setup %}

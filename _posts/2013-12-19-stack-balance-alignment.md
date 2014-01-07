@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "堆栈平衡与对齐"
+description: ""
+category: "编程"
 tags: [asm, 理解计算机, 编程技巧]
 ---
 {% include JB/setup %}
