@@ -2,7 +2,7 @@
 layout: post
 title: "性能优化的三重境界"
 description: ""
-category: "编程"
+category: "Program"
 tags: [性能优化, 理解计算机]
 ---
 {% include JB/setup %}
