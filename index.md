@@ -8,11 +8,13 @@ title: Summer Coral
 
 <ul class="posts">
     {% for post in site.posts %}
-        {% capture summary %}{{post.content | split:'<!--more-->' | first }}{% endcapture%}
+        <!--{% capture summary %}{{post.content | split:'<!--more-->' | first }}{% endcapture%}-->
         <li class="post">
             <span class="date">{{ post.date | date_to_string  }}</span> &raquo;
             <a class="title" href="{{ site.url }}{{ post.url }}">{{post.title }}</a>
-            {{ summary }}
+            <br>
+            {{ post.description }}
+            <!--{{ summary }}-->
         </li>
     {% endfor %}
 </ul>

@@ -1,15 +1,13 @@
 ---
 layout: post
 title: "x264内核移植"
-description: ""
+description: "本文简要介绍了将x264编码器移植到Windows内核态，编译成内核dll的方法。"
 category: "Program"
 tags: [x264, mingw, 驱动开发]
 ---
 {% include JB/setup %}
 
-　　本文简要介绍了将x264编码器移植到Windows内核态，编译成内核dll的方法。x264的代码可以在[这里](http://download.videolan.org/pub/videolan/x264/)获取到。
-
-<!--more-->
+　　本文简要介绍了将x264编码器移植到Windows内核态，编译成内核dll的方法。
 
 ##编译x264
 
