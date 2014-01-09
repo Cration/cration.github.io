@@ -2,7 +2,7 @@
 layout: post
 title: "JD-385 二次开发【持续更新】"
 description: "　　记录对JD-385进行二次开发的历程和心得"
-category: "嵌入式"
+category: "embedded"
 tags: [嵌入式, 四轴]
 ---
 {% include JB/setup %}
