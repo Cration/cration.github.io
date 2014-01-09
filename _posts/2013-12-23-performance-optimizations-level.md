@@ -1,16 +1,13 @@
 ---
 layout: post
 title: "性能优化的三重境界"
-description: ""
-category: ""
+description: "性能优化最终是追求尽可能低的计算时间成本。"
+category: "Program"
 tags: [性能优化, 理解计算机]
 ---
 {% include JB/setup %}
-##终极目的
 
 　　性能优化最终是追求尽可能低的计算时间成本。在目前的计算机体系结构中，表现为：
-
-<!--more-->
 
 * 更少的指令数量
 * 更低的指令延迟
