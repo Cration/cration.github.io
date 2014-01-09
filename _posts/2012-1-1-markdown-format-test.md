@@ -27,6 +27,24 @@ class SomeClass:
 ... prompt'''
 {% endhighlight %}
 
+$$
+\left[
+\begin {array}{cc}
+a11&a12\\
+a21&a22
+\end {array}
+\right]
+$$
+
+$$
+R=\left[
+\begin{array}{cc}
+cosA & -sinA \\
+sinA & cosA
+\end{array}
+\right]
+$$
+
   
 $$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
   
