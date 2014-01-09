@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "性能优化的三重境界"
-description: "性能优化最终是追求尽可能低的计算时间成本。"
+description: "　　性能优化最终是追求尽可能低的计算时间成本。"
 category: "Program"
 tags: [性能优化, 理解计算机]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "x264内核移植"
-description: "本文简要介绍了将x264编码器移植到Windows内核态，编译成内核dll的方法。"
+description: "　　本文简要介绍了将x264编码器移植到Windows内核态，编译成内核dll的方法。"
 category: "Program"
 tags: [x264, mingw, 驱动开发]
 ---

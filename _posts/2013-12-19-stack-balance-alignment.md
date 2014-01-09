@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "堆栈平衡与对齐"
-description: "C语言的种种调用约定中，以__cdecl最为常见，本小节以__cdecl约定为切入点，剖析计算机在函数调用过程的细节，主要分析堆栈的状态变化。"
+description: "　　C语言的种种调用约定中，以__cdecl最为常见，本小节以__cdecl约定为切入点，剖析计算机在函数调用过程的细节，主要分析堆栈的状态变化。"
 category: "Program"
 tags: [asm, 理解计算机, 编程技巧]
 ---
@@ -156,5 +156,7 @@ cglobal stack_align
 
 ##参考
 <span id="【1】"></span>【1】 [http://www.unixwiz.net/techtips/win32-callconv-asm.html](http://www.unixwiz.net/techtips/win32-callconv-asm.html)
+
 <span id="【2】"></span>【2】 [http://www.swansontec.com/sregisters.html](http://www.swansontec.com/sregisters.html)
+
 <span id="【3】"></span>【3】 [http://git.videolan.org/?p=x264.git;a=blob_plain;f=common/x86/cpu-a.asm;hb=refs/heads/master](http://git.videolan.org/?p=x264.git;a=blob_plain;f=common/x86/cpu-a.asm;hb=refs/heads/master)
