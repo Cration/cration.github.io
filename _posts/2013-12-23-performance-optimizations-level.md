@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "性能优化的三重境界"
-description: "　　性能优化最终是追求尽可能低的计算时间成本。"
+description: "　　昨夜西风凋碧树，独上高楼，望尽天涯路。<br>　　衣带渐宽终不悔，为伊消得人憔悴。<br>　　众里寻他千百度，蓦然回首，那人却在灯火阑珊处。"
 category: "Program"
 tags: [性能优化, 理解计算机]
 ---

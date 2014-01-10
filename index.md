@@ -4,6 +4,7 @@ title: Summer Coral
 ---
 {% include JB/setup %}
 
+
 ## Articles
 
 <ul class="posts">
@@ -18,10 +19,3 @@ title: Summer Coral
         </li>
     {% endfor %}
 </ul>
-
-<!--
-### Under construction
-
-![建设中]({{ site.img_path }}/UnderConstructionPage.gif)
-
--->

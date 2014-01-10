@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "堆栈平衡与对齐"
-description: "　　C语言的种种调用约定中，以__cdecl最为常见，本小节以__cdecl约定为切入点，剖析计算机在函数调用过程的细节，主要分析堆栈的状态变化。"
+description: "　　本文简要介绍函数调用过程中的堆栈变化，以及堆栈对齐的方法。"
 category: "Program"
 tags: [asm, 理解计算机, 编程技巧]
 ---
