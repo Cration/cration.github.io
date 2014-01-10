@@ -23,6 +23,8 @@ tags: [processing, sublime text]
 
 ###代码
 
+　　注意，以下代码中的“taskkill.exe”和“processing-java.exe”的路径和用户的配置环境有关，请根据需要修改代码中的路径。
+
 <span id="code"></span>
 {{ hightlight }}
     {
@@ -34,7 +36,7 @@ tags: [processing, sublime text]
                 "-im",
                 "java.exe",
                 "&",
-                "C://Program Files//processing-2.0b8//processing-java.exe",
+                "C://Program Files//processing//processing-java.exe",
                 "--sketch=$file_path",
                 "--output=$file_path/build",
                 "--force",
