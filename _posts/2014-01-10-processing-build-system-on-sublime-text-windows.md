@@ -7,11 +7,12 @@ tags: [processing, sublime text]
 ---
 {% include JB/setup %}
 
-###操作流程
 
 　　Processing是一款非常容易上手的数据可视化编程语言，语法和java非常类似，API和文档也都很完善，很适合用来快速开发一些小东西。但是processing自带的编辑器实在是不好用，字体、中文支持、自动完成等方面都不怎么样。
 
 　　而sublime text的build system功能恰好可以用于这类场景。以下介绍配置方法。
+
+###操作流程
 
 >1. 安装sublime text和processing。  
 2. 打开sublime text。  
@@ -21,6 +22,7 @@ tags: [processing, sublime text]
 6. 搭建完成，打开一个.pde文件，按ctrl+B进行测试。  
 
 ###代码
+
 <span id="code"></span>
 {{ hightlight }}
     {
