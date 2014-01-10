@@ -5,4 +5,4 @@ description: ""
 ---
 {% include JB/setup %}
 
-![建设中]({{ site.img_path }}/UnderConstructionPage.gif)
+徒手焊芯片，白纸写汇编。
