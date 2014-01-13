@@ -1,6 +1,6 @@
 ---
 layout: page
-title: γ - Ursae Majoris
+title: Homepage
 ---
 {% include JB/setup %}
 
