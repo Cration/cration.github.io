@@ -2,7 +2,7 @@
 layout: post
 title: "JD-385 二次开发【持续更新】"
 description: "　　本文记录对微型四轴飞行器JD-385进行二次开发的历程和心得，将不定时持续更新。"
-category: "embedded"
+category: "Embedded"
 tags: [嵌入式, 四轴]
 ---
 {% include JB/setup %}
