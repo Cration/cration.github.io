@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Summer Coral
+title: γ - Ursa Major
 ---
 {% include JB/setup %}
 

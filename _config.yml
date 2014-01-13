@@ -9,12 +9,12 @@ markdown: kramdown
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Cration's Blog
+title : remSum
 subtitle: Do one thing and do it well.
 tagline: Site Tagline
 author :
   name : Cration
-  email : leichen_523@qq.com
+  email : kezhang@rcstech.org
   github : Cration
 
 # The production_url is only used when full-domain names are needed
