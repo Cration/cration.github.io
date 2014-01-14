@@ -3,7 +3,7 @@ layout: post
 title: "代码技巧【不定期更新】"
 description: "　　散乱记录一些编程技巧和代码技巧。"
 category: "Program"
-tags: []
+tags: [C, 编程技巧]
 ---
 {% include JB/setup %}
 
