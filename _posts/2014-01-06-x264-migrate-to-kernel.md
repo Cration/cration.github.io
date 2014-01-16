@@ -78,6 +78,38 @@ tags: [x264, mingw, 驱动开发]
 
 　　添加完成后，使用WDK环境进行build即可。
 
+-----------------------------------------------------
+
+##调试记录
+
+>　　初始化时蓝屏，用windbg打开dmp发现挂在了x264_cqm_init+0x10里，然后用IDA反汇编x264.sys，发现此处是调用了chkstk_ms。原因是，在局部变量超过4K时，gcc会自动加入堆栈检查代码。解决方法：将局部变量改为全局。
+
+{% highlight asm %}
+__chkstk_ms:
+    /* EAX = size to be allocated */
+    push ecx
+    push eax
+    /* ECX = top of the previous stack frame */
+    lea ecx, [esp + 12]
+    /* probe the desired memory, page by page */
+    cmp eax, PAGE_SIZE
+    jl .l_LessThanAPage
+.l_MoreThanAPage:
+    /* raise the top of the stack by a page and probe */
+    sub ecx, PAGE_SIZE
+    test [ecx], eax
+    /* loop if still more than a page must be probed */
+    sub eax, PAGE_SIZE
+    cmp eax, PAGE_SIZE
+    jge .l_MoreThanAPage
+.l_LessThanAPage:
+    /* raise the top of the stack by EAX bytes (size % 4096) and probe */
+    sub ecx, eax
+    test [ecx], eax
+    pop eax
+    pop ecx
+    ret
+{% endhighlight %}
 
 ##References
 
@@ -88,3 +120,5 @@ tags: [x264, mingw, 驱动开发]
 [Win32 driver development using MinGW](http://www.fccps.cz/download/adv/frr/win32_ddk_mingw/win32_ddk_mingw.html)  
 [Calling a DLL in a Kernel-Mode Driver](http://msdn.microsoft.com/en-us/windows/hardware/gg463187.aspx)  
 [WinKVM: Windows Kernel-based Virtual Machine](http://www.linux-kvm.org/wiki/images/8/8a/WinKVM-KVMForum2010.pdf)  
+[chkstk_ms实现（x64和x86）](http://www.reactos.org/pipermail/ros-diffs/2011-May/041458.html)
+
