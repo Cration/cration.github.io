@@ -320,3 +320,53 @@ const int bytesPerPixel = isAlpha() ? 4 : 3;
 
 >C语言的{}代码块是有值的, 值为最后一个表达式的值.
 
+
+>Numbers Everyone Should Know from Google
+
+<table class="table table-bordered table-striped table-condensed">
+ <tr>
+  <td>trigraph sequences</td><td>time</td>
+ </tr>
+ <tr>
+  <td>L1 cache reference</td><td>0.5ns</td>
+ </tr>
+ <tr>
+  <td>Branch mispredict</td><td>5ns</td>
+ </tr>
+ <tr>
+  <td>L2 cache reference</td><td>7ns</td>
+ </tr>
+ <tr>
+  <td>Mutex lock/unlock</td><td>25ns</td>
+ </tr>
+ <tr>
+  <td>Main memory reference</td><td>100ns</td>
+ </tr>
+ <tr>
+  <td>Compress 1K bytes with Zippy</td><td>10,000ns</td>
+ </tr>
+ <tr>
+  <td>Send 2K bytes over 1 Gbps network</td><td>20,000ns</td>
+ </tr>
+ <tr>
+  <td>Read 1 MB sequentially from memory</td><td>250,000ns</td>
+ </tr>
+ <tr>
+  <td>Round trip within same datacenter</td><td>500,000ns</td>
+ </tr>
+ <tr>
+  <td>Read 1 MB sequentially from memory</td><td>1,000,000ns</td>
+ </tr>
+ <tr>
+  <td>Disk seek</td><td>10,000,000</td>
+ </tr>
+ <tr>
+  <td>Read 1 MB sequentially from network</td><td>10,000,000</td>
+ </tr>
+ <tr>
+  <td>Read 1 MB sequentially from disk</td><td>30,000,000</td>
+ </tr>
+ <tr>
+  <td>Send packet CA->Netherlands->CA</td><td>150,000,000</td>
+ </tr>
+</table>

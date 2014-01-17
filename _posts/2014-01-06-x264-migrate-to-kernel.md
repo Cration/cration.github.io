@@ -82,7 +82,7 @@ tags: [x264, mingw, 驱动开发]
 
 ##调试记录
 
->　　初始化时蓝屏，用windbg打开dmp发现挂在了x264_cqm_init+0x10里，然后用IDA反汇编x264.sys，发现此处是调用了chkstk_ms。原因是，在局部变量超过4K时，gcc会自动加入堆栈检查代码。解决方法：将局部变量改为全局。
+>　　初始化时蓝屏，用windbg打开dmp发现挂在了x264_cqm_init+0x10里，然后用IDA反汇编x264.sys，发现此处是调用了chkstk_ms。原因是，在局部变量超过4K时，gcc会自动加入堆栈检查代码。在执行chkstk_ms时，会扩充堆栈大小，而内核中栈最大只能为4K。解决方法：将局部变量改为全局变量、静态变量或动态分配。
 
 {% highlight asm %}
 __chkstk_ms:
@@ -110,6 +110,8 @@ __chkstk_ms:
     pop ecx
     ret
 {% endhighlight %}
+
+
 
 ##References
 
