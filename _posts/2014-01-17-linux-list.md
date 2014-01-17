@@ -7,7 +7,7 @@ tags: [linux, list, 数据结构]
 ---
 {% include JB/setup %}
 
-　　Linux内核中实现了一个通用的[双向链表](https://github.com/torvalds/linux/blob/master/include/linux/list.h)，其实现及其简洁而优雅。
+　　Linux内核中实现了一个通用的[双向链表](https://github.com/torvalds/linux/blob/master/include/linux/list.h)，其实现极其简洁而优雅。
 
 　　先来看看数据结构的定义：
 
