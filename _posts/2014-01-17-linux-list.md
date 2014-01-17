@@ -3,7 +3,7 @@ layout: post
 title: "Linux内核中的双向链表"
 description: "　　简要介绍了linux内核中的双向链表实现。"
 category: "program"
-tags: [linux, list, 数据结构]
+tags: [linux, list, 数据结构, C, 编程技巧]
 ---
 {% include JB/setup %}
 
