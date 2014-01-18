@@ -52,7 +52,7 @@ void remove_if(node ** head, remove_fn rm)
 
 ![链表]({{site.img_path}}/delete_node_in_list1.png)
 
-　　然后我们来运行代码，首先是 ` curr = head ` 和 ` entry = *curr `。注意，左数第一个紫色块不是head，而是head解引用后的内容，此处的head参数实际上传入的是头指针的地址。
+　　然后我们来运行代码，首先是 ``` curr = head ``` 和 ``` entry = *curr ```。注意，左数第一个紫色块不是head，而是head解引用后的内容，此处的head参数实际上传入的是头指针的地址。
 
 ![初始化]({{site.img_path}}/delete_node_in_list2.png)
 
