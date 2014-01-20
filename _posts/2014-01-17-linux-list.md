@@ -62,3 +62,7 @@ struct list_head{
 　　不过这里还有一点疑问：为何container_of宏中需要用一个临时的__mptr常量来保存ptr的值，而不是直接用ptr进行计算？若直接使用ptr，也仅仅引用了一次，所以不会出现自增自减操作的错误。如果是想要起到检查输入的作用，即防止传入的member不是结构体的成员，那也说不通，因为offsetof宏也能起到相同的作用。<s>待考证。</s>
 
 　　2014年01月18日更新：__mptr可以起到类型检查的作用，若传入的ptr不是member类型的指针，则会给出警告。
+
+###References
+
+[深入分析Linux内核链表](http://www.ibm.com/developerworks/cn/linux/kernel/l-chain/)

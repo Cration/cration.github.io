@@ -82,7 +82,7 @@ tags: [x264, mingw, 驱动开发]
 
 ##调试记录
 
->　　初始化时蓝屏，用windbg打开dmp发现挂在了x264_cqm_init+0x10里，然后用IDA反汇编x264.sys，发现此处是调用了chkstk_ms。原因是，在局部变量超过4K时，gcc会自动加入堆栈检查代码。在执行chkstk_ms时，会扩充堆栈大小，而内核中栈最大只能为4K。解决方法：将局部变量改为全局变量、静态变量或动态分配。
+>　　初始化时蓝屏，用windbg打开dmp发现挂在了x264_cqm_init+0x10里，然后用IDA反汇编x264.sys，发现此处是调用了chkstk_ms。原因是，在局部变量超过4K时，gcc会自动加入堆栈检查代码。在执行chkstk_ms时，会扩充堆栈大小（过程中会触发page fault），<s>而内核中栈最大只能为4K</s>，对于x86，内核栈最大只能为12K（x64是24K）。解决方法：将局部变量改为全局变量、静态变量或动态分配。
 
 {% highlight asm %}
 __chkstk_ms:
@@ -123,4 +123,4 @@ __chkstk_ms:
 [Calling a DLL in a Kernel-Mode Driver](http://msdn.microsoft.com/en-us/windows/hardware/gg463187.aspx)  
 [WinKVM: Windows Kernel-based Virtual Machine](http://www.linux-kvm.org/wiki/images/8/8a/WinKVM-KVMForum2010.pdf)  
 [chkstk_ms实现（x64和x86）](http://www.reactos.org/pipermail/ros-diffs/2011-May/041458.html)
-
+[从_chkstk说起，谈谈用户栈的管理](http://blog.dynox.cn/?p=1044)
