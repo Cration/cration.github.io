@@ -94,24 +94,15 @@
             </ul>
             <ul class="nav pull-right social visible-desktop">
               <li class="divider-vertical"></li>
+                <li>
+                  <a class="zocial icon rss" target="_blank" href="/rss.xml">
+                  <span class="hidden-desktop">ATOM Feed</span>
+                  </a>
+                </li>
               {% if site.author.github %}
                 <li>
                   <a href="https://github.com/{{ site.author.github }}" class="zocial github icon" target="_blank">
                     <span class="hidden-desktop">Github</span>
-                  </a>
-                </li>
-              {% endif %}         
-              {% if site.author.linkedin %}
-                <li>
-                  <a href="http://www.linkedin.com/in/{{ site.author.linkedin }}" class="zocial linkedin icon" target="_blank">
-                    <span class="hidden-desktop">LinkedIn</span>
-                  </a>
-                </li>
-              {% endif %}                    
-              {% if site.author.feedburner %}
-                <li>
-                  <a href="http://feeds.feedburner.com/{{ site.author.feedburner }}" class="zocial rss icon" target="_blank">
-                    <span class="hidden-desktop">FeedBurner</span>
                   </a>
                 </li>
               {% endif %}
