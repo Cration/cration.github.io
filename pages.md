@@ -12,6 +12,8 @@ group: navigation
 {% include JB/pages_list %}
 </ul>
 
+<!--div align="left"><a><img border="0" src="http://cc.amazingcounters.com/counter.php?i=3161116&c=9483661"></a></div-->
+
 ---------------------------------------------------------
 
 ###友情链接
