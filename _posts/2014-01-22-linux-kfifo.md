@@ -3,7 +3,7 @@ layout: post
 title: "Linux内核中的循环队列"
 description: "　　本文简述linux内核中无锁循环队列的实现。"
 category: "program"
-tags: [linux, C, 编程技巧]
+tags: [linux, C, 编程技巧, 性能优化, 嵌入式, 数据结构]
 ---
 {% include JB/setup %}
 
