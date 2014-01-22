@@ -80,7 +80,7 @@ static inline unsigned int kfifo_unused(struct __kfifo *fifo)
 
 　　图中示意队列可以无限重复追加，而实际上队列在内存中只占用8个元素的空间。通过in和out访问元素之前，要先将in和out对mask做按位与操作，这样就能得到在内存中的实际偏移量，这么做可以简化计算，提升性能。
 
-　　然后来看最关键的入队出队操作，首先是入队：
+　　然后来看最关键的入队出队操作，以入队为例：
 
 {% highlight C %}
 static void kfifo_copy_in(struct __kfifo *fifo, const void *src, unsigned int len, unsigned int off)
@@ -121,6 +121,61 @@ unsigned int __kfifo_in(struct __kfifo *fifo,
 }
 EXPORT_SYMBOL(__kfifo_in);
 {% endhighlight %}
+
+　　由于存储空间是一段连续的空间，所以在入队拷贝的时候可能需要分两段：尾部和头部。在计算拷贝长度时，直接利用in和out的差值，即使in或out在无符号整型数的范围溢出，计算出来的长度也是正确的。实现无锁的关键在于：先入队，然后再对in进行加的操作；类似地，先出队，然后对out进行加的操作。只要out小于in，就没有任何问题。
+
+　　出队的实现也是类似的：
+
+{% highlight C %}
+static void kfifo_copy_out(struct __kfifo *fifo, void *dst,
+                unsigned int len, unsigned int off)
+{
+    unsigned int size = fifo->mask + 1;
+    unsigned int esize = fifo->esize;
+    unsigned int l;
+
+    off &= fifo->mask;
+    if (esize != 1) {
+        off *= esize;
+        size *= esize;
+        len *= esize;
+    }
+    l = min(len, size - off);
+
+    memcpy(dst, fifo->data + off, l);
+    memcpy(dst + l, fifo->data, len - l);
+    /*
+     * make sure that the data is copied before
+     * incrementing the fifo->out index counter
+     */
+    smp_wmb();
+}
+
+unsigned int __kfifo_out_peek(struct __kfifo *fifo,
+                void *buf, unsigned int len)
+{
+    unsigned int l;
+
+    l = fifo->in - fifo->out;
+    if (len > l)
+        len = l;
+
+    kfifo_copy_out(fifo, buf, len, fifo->out);
+    return len;
+}
+EXPORT_SYMBOL(__kfifo_out_peek);
+
+unsigned int __kfifo_out(struct __kfifo *fifo,
+                void *buf, unsigned int len)
+{
+    len = __kfifo_out_peek(fifo, buf, len);
+    fifo->out += len;
+    return len;
+}
+EXPORT_SYMBOL(__kfifo_out);
+{% endhighlight %}
+
+　　无锁循环队列的应用范围很广泛，例如：在低频单片机中，串口接收数据（中断模式）可以将ISR分为top half和bottom half，top half负责接收数据并将数据存放到循环队列中，而bottom half负责从队列中取出数据并处理数据。用类似以上的实现，可以减少一个锁，从而实现更高的并发度和资源利用率。
 
 ###References
 [Why computers represent signed integers using two's complement](http://igoro.com/archive/why-computers-represent-signed-integers-using-twos-complement/)  
