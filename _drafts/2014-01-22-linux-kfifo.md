@@ -91,9 +91,9 @@ static void kfifo_copy_in(struct __kfifo *fifo, const void *src, unsigned int le
 
     off &= fifo->mask;
     if (esize != 1) {
-            off *= esize;
-            size *= esize;
-            len *= esize;
+        off *= esize;
+        size *= esize;
+        len *= esize;
     }
     l = min(len, size - off);
 
@@ -113,7 +113,7 @@ unsigned int __kfifo_in(struct __kfifo *fifo,
 
     l = kfifo_unused(fifo);
     if (len > l)
-            len = l;
+        len = l;
 
     kfifo_copy_in(fifo, buf, len, fifo->in);
     fifo->in += len;
@@ -121,6 +121,8 @@ unsigned int __kfifo_in(struct __kfifo *fifo,
 }
 EXPORT_SYMBOL(__kfifo_in);
 {% endhighlight %}
+
+　　
 
 ###References
 [Why computers represent signed integers using two's complement](http://igoro.com/archive/why-computers-represent-signed-integers-using-twos-complement/)  
