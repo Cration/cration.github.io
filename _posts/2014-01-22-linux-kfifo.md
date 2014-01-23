@@ -122,9 +122,6 @@ unsigned int __kfifo_in(struct __kfifo *fifo,
 EXPORT_SYMBOL(__kfifo_in);
 {% endhighlight %}
 
-<<<<<<< HEAD:_drafts/2014-01-22-linux-kfifo.md
-　　
-=======
 　　由于存储空间是一段连续的空间，所以在入队拷贝的时候可能需要分两段：尾部和头部。在计算拷贝长度时，直接利用in和out的差值，即使in或out在无符号整型数的范围溢出，计算出来的长度也是正确的。实现无锁的关键在于：先入队，然后再对in进行加的操作；类似地，先出队，然后对out进行加的操作。只要out小于in，就没有任何问题。
 
 　　出队的实现也是类似的：
@@ -179,7 +176,6 @@ EXPORT_SYMBOL(__kfifo_out);
 {% endhighlight %}
 
 　　无锁循环队列的应用范围很广泛，例如：在低频单片机中，串口接收数据（中断模式）可以将ISR分为top half和bottom half，top half负责接收数据并将数据存放到循环队列中，而bottom half负责从队列中取出数据并处理数据。用类似以上的实现，可以减少一个锁，从而实现更高的并发度和资源利用率。
->>>>>>> f45b91e0e7fd762d35037ce0cc794b2e0c8b9eb2:_posts/2014-01-22-linux-kfifo.md
 
 ###References
 [Why computers represent signed integers using two's complement](http://igoro.com/archive/why-computers-represent-signed-integers-using-twos-complement/)  
