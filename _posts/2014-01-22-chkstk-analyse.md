@@ -3,7 +3,7 @@ layout: post
 title: "_chkstk函数浅析"
 description: "　　简要分析了windows中_chkstk函数的工作原理和使用场景。"
 category: "program"
-tags: [驱动开发, 编程技巧, C]
+tags: [驱动开发, 编程技巧, C, asm]
 ---
 {% include JB/setup %}
 
