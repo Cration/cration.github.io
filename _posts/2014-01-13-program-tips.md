@@ -4,6 +4,7 @@ title: "代码技巧【不定期更新】"
 description: "　　散乱记录一些编程技巧和代码技巧。"
 category: "Program"
 tags: [C, 编程技巧]
+update: 2014-01-19
 ---
 {% include JB/setup %}
 
