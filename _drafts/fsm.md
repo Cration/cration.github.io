@@ -13,7 +13,85 @@ tags: [有限状态机, C, 编程技巧]
 
 　　于是我们实现了一个“星球毁灭器”。为了避免误操作，不能直接下达类似“摧毁地球”的指令，而应该先将机器目标锁定为地球，然后按下“摧毁”按钮。另外，由于恒星的体积一般比行星大得多，所以摧毁一颗恒星后，机器将进入过热状态，需要冷却后才能再次使用。用有限状态机可以描述为下图：
 
-##References
+![星球毁灭者状态图]({{site.img_path}}/fsm_destroyStar.png)
 
-[http://en.wikipedia.org/wiki/Finite-state_machine](http://en.wikipedia.org/wiki/Finite-state_machine)
+　　图中描述了状态在事件下的切换，没有表示出在状态切换的过程中，机器执行的操作，例如在按下“摧毁”按钮后，将执行摧毁操作，然后转换到待机或过热状态。
+
+　　了解了FSM的基本概念后，接下来看FSM的实现方式。最初级，也是最直观的方式就是利用C语言的switch case或if语句，把所有状态和事件都写在同一个函数中，如：
+
+{% highlight C %}
+switch (state)
+{
+case STAND_BY:
+    switch (event)
+    {
+    case GET_PLANET:
+        target = planet;
+        Lock(target);
+        state = LOCK_PLANET;
+        break;
+    case GET_STAR:
+        target = star;
+        Lock(target);
+        state = LOCK_STAR;
+        break;
+    default:
+        break;
+    }
+case LOCK_PLANET:
+    switch (event)
+    {
+    case GET_STAR:
+        target = star;
+        Lock(target);
+        state = LOCK_STAR;
+        break;
+    case PUSH:
+        Destroy(target);
+        state = STAND_BY;
+        break;
+    default:
+        break;
+    }
+case LOCK_STAR:
+    switch (event)
+    {
+    case GET_PLANET:
+        target = planet;
+        Lock(target);
+        state = LOCK_PLANET;
+        break;
+    case PUSH:
+        Destroy(target);
+        state = OVERHEATING;
+        break;
+    default:
+    }
+case OVERHEATING:
+    switch (event)
+    {
+    case COOL_DOWN:
+        state = STAND_BY;
+        break;
+    default:
+        break;
+    }
+}
+{% endhighlight %}
+
+　　代码进入状态的分支后，判断事件，随后根据不同事件执行不同的操作并跳转到相应的状态。但是当状态和时间变多之后，这种方法的代码和逻辑将变得十分复杂和混乱，所以一般只在逻辑和状态非常简单的情况下采用。下面介绍一种表驱动法。
+
+　　FSM的本质是一张有向图，而有向图一般可以用一张二维表来描述，结合C语言的函数指针，我们可以实现FSM的所有特性。一般可以用一个坐标表示状态，另一个坐标表示事件，表中元素存储下一个状态和对应的操作。
+
+　　
+
+{% highlight C %}
+
+{% endhighlight %}
+
+###References
+
+[http://en.wikipedia.org/wiki/Finite-state_machine](http://en.wikipedia.org/wiki/Finite-state_machine)  
+[C state-machine design](http://stackoverflow.com/questions/1647631/c-state-machine-design)  
+[实现简易而强大的游戏AI--FSM](http://blog.friskit.me/2012/05/introduction-of-fsm/)  
 
