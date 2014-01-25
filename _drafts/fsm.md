@@ -83,10 +83,49 @@ case OVERHEATING:
 
 　　FSM的本质是一张有向图，而有向图一般可以用一张二维表来描述，结合C语言的函数指针，我们可以实现FSM的所有特性。一般可以用一个坐标表示状态，另一个坐标表示事件，表中元素存储下一个状态和对应的操作。
 
-　　
-
 {% highlight C %}
+#define STATE_NUM   4
+#define EVENT_NUM   4
 
+#define NO_STATE    -1
+#define STAND_BY    0
+#define LOCK_PLANET 1
+#define LOCK_STAR   2
+#define OVERHEATING 3
+
+#define ANY_EVENT   -1
+#define GET_PLANET  0
+#define GET_STAR    1
+#define PUSH        2
+#define COOLDOWN    3
+
+typedef struct 
+{
+    int nextState;
+    int (*op)(void *);
+}FSM_Item;
+
+FSM_Item fsm[STATE_NUM][EVENT_NUM] = 
+{
+    { {LOCK_PLANET, Lock}, {LOCK_STAR, Lock}, {NO_STATE, NULL}, {NO_STATE, NULL} }, 
+    { {NO_STATE, NULL}, {LOCK_STAR, Lock}, {STAND_BY, Destroy}, {NO_STATE, NULL} }, 
+    { {LOCK_PLANET, Lock}, {NO_STATE, NULL}, {OVERHEATING, Destroy}, {NO_STATE, NULL} }, 
+    { {NO_STATE, NULL}, {NO_STATE, NULL}, {NO_STATE, NULL}, {STAND_BY, NULL} }
+};
+
+while (1)
+{
+    int event = GetEvent();
+    FSM_Item item = fsm[state][event];
+    if (NULL != item.op)
+    {
+        op(parg);
+    }
+    if (NO_STATE != item.nextState)
+    {
+        state = item.nextState;
+    }
+}
 {% endhighlight %}
 
 ###References
