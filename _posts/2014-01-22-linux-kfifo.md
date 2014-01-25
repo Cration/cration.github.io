@@ -13,11 +13,11 @@ tags: [linux, C, 编程技巧, 性能优化, 嵌入式, 数据结构]
 
 {% highlight C %}
 struct __kfifo {
-        unsigned int        in;
-        unsigned int        out;
-        unsigned int        mask;
-        unsigned int        esize;
-        void                *data;
+    unsigned int        in;
+    unsigned int        out;
+    unsigned int        mask;
+    unsigned int        esize;
+    void                *data;
 };
 {% endhighlight %}
 
@@ -25,7 +25,7 @@ struct __kfifo {
 
 {% highlight C %}
 int __kfifo_alloc(struct __kfifo *fifo, unsigned int size,
-                size_t esize, gfp_t gfp_mask)
+                  size_t esize, gfp_t gfp_mask)
 {
     /*
      * round down to the next power of 2, since our 'let the indices
@@ -38,16 +38,16 @@ int __kfifo_alloc(struct __kfifo *fifo, unsigned int size,
     fifo->esize = esize;
 
     if (size < 2) {
-            fifo->data = NULL;
-            fifo->mask = 0;
-            return -EINVAL;
+        fifo->data = NULL;
+        fifo->mask = 0;
+        return -EINVAL;
     }
 
     fifo->data = kmalloc(size * esize, gfp_mask);
 
     if (!fifo->data) {
-            fifo->mask = 0;
-            return -ENOMEM;
+        fifo->mask = 0;
+        return -ENOMEM;
     }
     fifo->mask = size - 1;
 
@@ -128,7 +128,7 @@ EXPORT_SYMBOL(__kfifo_in);
 
 {% highlight C %}
 static void kfifo_copy_out(struct __kfifo *fifo, void *dst,
-                unsigned int len, unsigned int off)
+                           unsigned int len, unsigned int off)
 {
     unsigned int size = fifo->mask + 1;
     unsigned int esize = fifo->esize;
