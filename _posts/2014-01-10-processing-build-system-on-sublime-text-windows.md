@@ -2,7 +2,7 @@
 layout: post
 title: "在sublime text中搭建Processing运行环境"
 description: "　　本文介绍了在sublime text中搭建Processing运行环境的方法。"
-category: "program"
+category: "work"
 tags: [processing, sublime text]
 ---
 {% include JB/setup %}
