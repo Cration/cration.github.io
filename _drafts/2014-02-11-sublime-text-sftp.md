@@ -45,7 +45,118 @@ tags: [ftp, sftp, sublime text]
 
 ![FTP设置8]({{site.img_path}}/WIN7_FTP_8.png)
 
+　　搭建好FTP服务器后，可以通过浏览器或资源管理器测试FTP是否正常，此处不再演示。
+
 ###sublime text中安装FTP插件
 
+　　接下来是按照sublime text的FTP插件，首先按下“ctrl+shift+P”，输入install，稍等片刻后在弹出的输入框内输入SFTP，选择“SFTP”插件进行安装。当然，首先要确认已经安装了sublime text的插件管理器，安装方法参见[这里](https://sublime.wbond.net/installation)。
+
+　　SFTP插件安装完成后，File菜单中会出现“SFTP/FTP”的选项。如下图：
+
+![File菜单]({{site.img_path}}/sublime_text_sftp_1.png)
 
 ###配置FTP插件
+
+　　接下来是配置插件。先下载文档的文件夹并用sublime text打开，右击文件夹，选择“SFTP/FTP”→“Map to Remote...”。
+
+![File菜单]({{site.img_path}}/sublime_text_sftp_1.png)
+
+　　此时会弹出一个sftp-config.json的配置文件，我们可以根据需要修改其中的配置选项，默认选项如下：
+
+{% highlight json %}
+{
+    // The tab key will cycle through the settings when first created
+    // Visit http://wbond.net/sublime_packages/sftp/settings for help
+    
+    // sftp, ftp or ftps
+    "type": "sftp",
+
+    "save_before_upload": true,
+    "upload_on_save": false,
+    "sync_down_on_open": false,
+    "sync_skip_deletes": false,
+    "sync_same_age": true,
+    "confirm_downloads": false,
+    "confirm_sync": true,
+    "confirm_overwrite_newer": false,
+    
+    "host": "example.com",
+    "user": "username",
+    //"password": "password",
+    //"port": "22",
+    
+    "remote_path": "/example/path/",
+    "ignore_regexes": [
+        "\\.sublime-(project|workspace)", "sftp-config(-alt\\d?)?\\.json",
+        "sftp-settings\\.json", "/venv/", "\\.svn/", "\\.hg/", "\\.git/",
+        "\\.bzr", "_darcs", "CVS", "\\.DS_Store", "Thumbs\\.db", "desktop\\.ini"
+    ],
+    //"file_permissions": "664",
+    //"dir_permissions": "775",
+    
+    //"extra_list_connections": 0,
+
+    "connect_timeout": 30,
+    //"keepalive": 120,
+    //"ftp_passive_mode": true,
+    //"ftp_obey_passive_host": false,
+    //"ssh_key_file": "~/.ssh/id_rsa",
+    //"sftp_flags": ["-F", "/path/to/ssh_config"],
+    
+    //"preserve_modification_times": false,
+    //"remote_time_offset_in_hours": 0,
+    //"remote_encoding": "utf-8",
+    //"remote_locale": "C",
+    //"allow_config_upload": false,
+}
+{% endhighlight %}
+
+　　以下是我的配置文件，注意到，匿名用户的用户名和密码都是“anonymous”。
+
+{% highlight json %}
+{
+    // The tab key will cycle through the settings when first created
+    // Visit http://wbond.net/sublime_packages/sftp/settings for help
+    
+    // sftp, ftp or ftps
+    "type": "ftp",                  //根据服务器的协议类型选择
+
+    "save_before_upload": true,
+    "upload_on_save": true,         //保存文件时自动上传
+    "sync_down_on_open": false,
+    "sync_skip_deletes": false,
+    "sync_same_age": true,
+    "confirm_downloads": false,
+    "confirm_sync": true,
+    "confirm_overwrite_newer": false,
+    
+    "host": "192.168.4.146",    //FTP地址
+    "user": "anonymous",
+    "password": "anonymous",
+    //"port": "22",
+    
+    "remote_path": "/",         //这里填写FTP服务器上对应的文件夹路径，记得修改
+    "ignore_regexes": [
+        "\\.sublime-(project|workspace)", "sftp-config(-alt\\d?)?\\.json",
+        "sftp-settings\\.json", "/venv/", "\\.svn/", "\\.hg/", "\\.git/",
+        "\\.bzr", "_darcs", "CVS", "\\.DS_Store", "Thumbs\\.db", "desktop\\.ini"
+    ],
+    //"file_permissions": "664",
+    //"dir_permissions": "775",
+    
+    //"extra_list_connections": 0,
+
+    "connect_timeout": 30,
+    //"keepalive": 120,
+    //"ftp_passive_mode": true,
+    //"ftp_obey_passive_host": false,
+    //"ssh_key_file": "~/.ssh/id_rsa",
+    //"sftp_flags": ["-F", "/path/to/ssh_config"],
+    
+    //"preserve_modification_times": false,
+    //"remote_time_offset_in_hours": 0,
+    //"remote_encoding": "utf-8",
+    //"remote_locale": "C",
+    //"allow_config_upload": false,
+}
+{% endhighlight %}
