@@ -37,6 +37,13 @@ tags: [ftp, sftp, sublime text]
 
 ![添加FTP站点]({{site.img_path}}/WIN7_FTP_5.png)
 
+　　五、依次按照图示操作。这里因为是演示，所以在最后的权限控制上选择了所有用户可读写，在实际应用中可以按需要设置。
+
+![FTP设置6]({{site.img_path}}/WIN7_FTP_6.png)
+
+![FTP设置7]({{site.img_path}}/WIN7_FTP_7.png)
+
+![FTP设置8]({{site.img_path}}/WIN7_FTP_8.png)
 
 ###sublime text中安装FTP插件
 
