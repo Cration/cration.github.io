@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "sublime text SFTP"
+title: "在sublime text中编辑FTP上的文档"
 description: "　　本文介绍了在sublime text中使用FTP插件进行远程编辑的配置方法。"
 category: "work"
 tags: [ftp, sftp, sublime text]
@@ -59,7 +59,7 @@ tags: [ftp, sftp, sublime text]
 
 　　接下来是配置插件。先下载文档的文件夹并用sublime text打开，右击文件夹，选择“SFTP/FTP”→“Map to Remote...”。
 
-![File菜单]({{site.img_path}}/sublime_text_sftp_1.png)
+![File菜单]({{site.img_path}}/sublime_text_sftp_2.png)
 
 　　此时会弹出一个sftp-config.json的配置文件，我们可以根据需要修改其中的配置选项，默认选项如下：
 
