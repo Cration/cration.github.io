@@ -4,7 +4,7 @@ title: "代码技巧【不定期更新】"
 description: "　　散乱记录一些编程技巧和代码技巧。"
 category: "Program"
 tags: [C, 编程技巧]
-update: 2014-01-19
+update: 2014-02-13
 ---
 {% include JB/setup %}
 
@@ -371,3 +371,6 @@ const int bytesPerPixel = isAlpha() ? 4 : 3;
   <td>Send packet CA->Netherlands->CA</td><td>150,000,000</td>
  </tr>
 </table>
+
+>使用_alloca函数可以在栈上分配内存，以实现变长数组之类的应用。
+

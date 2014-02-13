@@ -65,4 +65,5 @@ char * DuffStrnCopy(char * dst, const char * from, int count)
 [维基百科：达夫设备](http://en.wikipedia.org/wiki/Duff's_device)  
 [一个“蝇量级”C语言协程库](http://coolshell.cn/articles/10975.html)  
 [维基百科：协程](http://en.wikipedia.org/wiki/Coroutine)  
+[Coroutines in C](http://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)  
 
