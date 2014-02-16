@@ -3,7 +3,7 @@ layout: post
 title: "在sublime text中编辑FTP上的文档"
 description: "　　本文介绍了在sublime text中使用FTP插件进行远程编辑的配置方法。"
 category: "work"
-tags: [ftp, sftp, sublime text]
+tags: [ftp, sublime text]
 ---
 {% include JB/setup %}
 
