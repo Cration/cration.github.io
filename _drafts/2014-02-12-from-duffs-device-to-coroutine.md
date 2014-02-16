@@ -54,9 +54,16 @@ char * DuffStrnCopy(char * dst, const char * from, int count)
 }
 {% endhighlight %}
 
+　　本文不对达夫设备的性能进行分析，只简要介绍其语法技巧。达夫设备的核心技巧在于：switch语句的case标号本质上与goto语句的标号是一样的，case标号可以加在switch的大括号内部的任意位置，跳转效果和goto完全一样。结合循环语句使用，于是得到了“选择循环入口点”的效果，并且只对第一次循环起作用。
+
 ###协程
+
+　　[协程（cooperative routines）](http://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B)可以认为是一种“轻量级的线程”，在逻辑上和线程是类似的，但开销比线程要小得多，通常情况下你可以轻松地创建数万乃至数十万个协程。
 
 ####References
 
 [维基百科：达夫设备](http://en.wikipedia.org/wiki/Duff's_device)  
 [一个“蝇量级”C语言协程库](http://coolshell.cn/articles/10975.html)  
+[维基百科：协程](http://en.wikipedia.org/wiki/Coroutine)  
+[Coroutines in C](http://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)  
+
