@@ -4,9 +4,13 @@ title: "JD-385 二次开发【持续更新】"
 description: "　　本文记录对微型四轴飞行器JD-385进行二次开发的历程和心得，将不定时持续更新。"
 category: "Embedded"
 tags: [嵌入式, 四轴]
-update: 2014-01-18
+update: 2014-02-22
 ---
 {% include JB/setup %}
+
+####2014-02-22
+
+　　继续复原原理图。发现MPU6050的电源是独立的，单独使用一块65Z5，单片机和BK2423共用一块65Z5。在MPU6050的CPOUT管脚测得24.6V的电压，查阅手册得知这里是一个电荷泵，用于产生MEMS振荡器所需的高电压。I<sup>2</sup>C的上拉电阻为1k。
 
 
 ####2014-01-13
@@ -37,4 +41,6 @@ update: 2014-01-18
 
 ##References
 [http://www.inhaos.com/uploadfile/otherpic/BK2423%20Datasheet%20v2.0.pdf](http://www.inhaos.com/uploadfile/otherpic/BK2423%20Datasheet%20v2.0.pdf)  
-
+[Low Dropout CMOS Voltage Regulators LM6206N3](http://www.mikrocontroller.net/attachment/193855/LM6206N3.pdf)  
+[MPU-6000 and MPU-6050 Product Specification Revision 3.4](http://invensense.com/mems/gyro/documents/PS-MPU-6000A-00v3.4.pdf)  
+[MPU-6000/MPU-6050 9-Axis Evaluation Board User Guide](http://invensense.com/mems/gyro/documents/AN-MPU-6000EVB.pdf)  
