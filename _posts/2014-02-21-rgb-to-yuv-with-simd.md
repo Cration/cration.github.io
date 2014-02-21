@@ -212,7 +212,7 @@ LoopIn2:
 }
 {% endhighlight %}
 
-####References
+###References
 [维基百科：色彩空间](http://en.wikipedia.org/wiki/Color_space)  
 [维基百科：色彩模型](http://en.wikipedia.org/wiki/Color_model)  
 [维基百科：SIMD](http://en.wikipedia.org/wiki/SIMD)  
