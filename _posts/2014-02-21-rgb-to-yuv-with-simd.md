@@ -1,12 +1,20 @@
 ---
 layout: post
-title: "使用SSE实现RGB到YUV的颜色空间转换"
-description: "　　本文给出了一种使用SSE指令集将图像进行RGB到YUV的颜色空间转换的实现。"
+title: "使用SSE实现RGB到YUV的色彩空间转换"
+description: "　　本文给出了一种使用SSE指令集将图像进行RGB到YUV的色彩空间转换的实现。"
 category: "program"
 tags: [asm, 编程技巧]
 ---
 {% include JB/setup %}
 
+　　RGB和YUV是计算机中常用的两种颜色编码方法，在图像压缩领域，经常要实现高效的RGB和YUV互相转换的功能。由于颜色空间转换具有数据高度密集且分布规律的特点，许多情况下可以使用现代CPU的SIMD功能。本文给出一种实现方式，实现了从ARGB到YUV420 planar格式的转换，其中ARGB的alpha分量不起作用，一般认为是0。
+
+　　代码中带有“ ;///////////// ”后缀注释的代码，在下方都能找到相应的被注释掉的代码，这是由于对指令做了人工乱序的处理，能少许提升性能。
+
+　　以下代码主要做了几点优化：  
+　　　　①替代浮点数运算为整数运算  
+　　　　②并行计算多个像素点  
+　　　　③指令乱序
 
 {% highlight asm %}
 /**
@@ -203,3 +211,9 @@ LoopIn2:
     return 0;
 }
 {% endhighlight %}
+
+####References
+[维基百科：色彩空间](http://en.wikipedia.org/wiki/Color_space)  
+[维基百科：色彩模型](http://en.wikipedia.org/wiki/Color_model)  
+[维基百科：SIMD](http://en.wikipedia.org/wiki/SIMD)  
+[Optimizing YUV-RGB Color Space Conversion Using Intel’s SIMD Technology](http://lestourtereaux.free.fr/papers/data/yuvrgb.pdf)  
