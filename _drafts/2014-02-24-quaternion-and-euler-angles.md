@@ -19,7 +19,7 @@ tags: [数学, 四轴]
 
 <center><img src="{{site.img_path}}/opengl_yaw_pitch_roll.png" alt="yaw-pitch-roll"/><p>roll-pitch-yaw</p></center>
 
-　　一般约定，绕x、y、z轴旋转的角分别是roll、pitch、yaw，分别记作$\varphi$、$\theta$、$\psi$。
+　　一般约定，绕x、y、z轴旋转的角分别是roll、pitch、yaw，分别记作$\varphi$、$\theta$、$\psi$。从参考坐标系上区分，欧拉角又分为静态和动态，其中静态欧拉角以绝对坐标系（地球）为参考，动态欧拉角以刚体自身的坐标系为参考。
 
 ###References
 [维基百科：欧拉角](http://en.wikipedia.org/wiki/Euler_angles)  
