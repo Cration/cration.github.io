@@ -49,7 +49,19 @@ $$\mathbf{q}=e^{ {\frac{1}{2}}\theta(u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k})}
 
 $$\mathbf{p}=0+p_x\mathbf{i}+p_y\mathbf{j}+p_z\mathbf{k}$$
 
-　　将$P$点绕轴向量$\vec u$旋转$\theta$角后得到的点记为$P^'$ 。
+　　将$P$点绕轴向量$\vec u$旋转$\theta$角后得到的点记为$P^{\prime}$，将向量$\vec{OP^{\prime}}$的四元数形式记为$\mathbf{p^{\prime}}$，则有：
+
+$$\mathbf{p^{\prime}}=\mathbf{qpq^{-1}}$$
+
+　　其中$\mathbf{q^{-1}}$称为四元数$\mathbf{q}$的逆，定义为四元数的共轭除以模：
+
+$$\mathbf{q^{-1}}=\frac{\mathbf{q}^*}{\parallel\mathbf{q}\parallel}$$
+
+　　其中四元数的共轭和模分别定义为：
+
+$$\mathbf{q}^*=$$
+
+$$$$
 
 ###References
 [维基百科：欧拉角](http://en.wikipedia.org/wiki/Euler_angles)  
