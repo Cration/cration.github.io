@@ -35,9 +35,15 @@ $$\mathbf{i}^2=\mathbf{j}^2=\mathbf{k}^2=\mathbf{ijk}=-1$$
 
 　　$\mathbf{i}$、$\mathbf{j}$、$\mathbf{k}$之间的运算关系还有：$\mathbf{ij}=\mathbf{k}$、$\mathbf{jk}=\mathbf{i}$、$\mathbf{ki}=\mathbf{j}$、$\mathbf{ji}=-\mathbf{k}$、$\mathbf{kj}=-\mathbf{i}$、$\mathbf{ik}=-\mathbf{j}$。注意到，这里交换律是不成立的。四元数的运算定义和运算法则，这里就不再介绍了，有需要可以参考[维基百科](http://en.wikipedia.org/wiki/Quaternion)。
 
-　　要理解四元数与姿态的联系，首先得从欧拉旋转定理说起。欧拉旋转定理表明，任意的旋转序列等价于绕某个轴的单次旋转。如果我们能描述这个轴和旋转的角度，就能描述整个旋转序列等价的单次旋转。
+　　四元数$\mathbf{q}=a+b\mathbf{i}+c\mathbf{j}+d\mathbf{k}$的共轭和模分别定义为：
 
-　　若存在轴向量
+$$\mathbf{q}^*=a-b\mathbf{i}-c\mathbf{j}-d\mathbf{k}$$
+
+$$\parallel\mathbf{q}\parallel=\sqrt{\mathbf{q\cdot q}}=\sqrt{\mathbf{q q^*}}=\sqrt{a^2+b^2+c^2+d^2}$$
+
+　　我们把模为1的四元数称为“单位四元数”，只有单位四元数才能用于描述空间旋转/姿态。要理解单位四元数与姿态/空间旋转的联系，首先得从欧拉旋转定理说起。欧拉旋转定理表明，任意的旋转序列等价于绕某个轴的单次旋转。如果我们能描述这个轴和旋转的角度，就能描述整个旋转序列等价的单次旋转。
+
+　　若存在**单位**轴向量
 
 $$\vec u=(u_x,u_y,u_z)=u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k}$$
 
@@ -45,7 +51,7 @@ $$\vec u=(u_x,u_y,u_z)=u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k}$$
 
 $$\mathbf{q}=e^{ {\frac{1}{2}}\theta(u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k})}=cos\frac{1}{2}\theta+(u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k})sin\frac{1}{2}\theta$$
 
-　　对于点$P(p_x,p_y,p_z)$，有向量$\vec{OP}=(p_x,p_y,p_z)$，我们将其写成四元数的形式：
+　　由于$\vec u$是单位向量，容易证明四元数$\mathbf{q}$为单位四元数。对于点$P(p_x,p_y,p_z)$，有向量$\vec{OP}=(p_x,p_y,p_z)$，我们将其写成四元数的形式：
 
 $$\mathbf{p}=0+p_x\mathbf{i}+p_y\mathbf{j}+p_z\mathbf{k}$$
 
@@ -53,15 +59,19 @@ $$\mathbf{p}=0+p_x\mathbf{i}+p_y\mathbf{j}+p_z\mathbf{k}$$
 
 $$\mathbf{p^{\prime}}=\mathbf{qpq^{-1}}$$
 
-　　其中$\mathbf{q^{-1}}$称为四元数$\mathbf{q}$的逆，定义为四元数的共轭除以模：
+　　其中$\mathbf{q^{-1}}$称为四元数$\mathbf{q}$的逆，定义为四元数的共轭除以模的平方：
 
-$$\mathbf{q^{-1}}=\frac{\mathbf{q}^*}{\parallel\mathbf{q}\parallel}$$
+$$\mathbf{q^{-1}}=\frac{\mathbf{q}^*}{\parallel\mathbf{q}\parallel^2}$$
 
-　　其中四元数的共轭和模分别定义为：
+　　对于单位四元数而言，其共轭与逆是相等的。到此，我们知道了用单位四元数计算旋转的方法。注意，四元数描述的实际上是矢量的旋转，而当旋转矢量的起点为原点时，计算结果可以看作是单个点绕某个轴的旋转。
 
-$$\mathbf{q}^*=$$
+##四元数与欧拉角的换算
 
-$$$$
+　　对于[右手坐标系](http://en.wikipedia.org/wiki/Cartesian_coordinate_system#Orientation_and_handedness)，把四元数和欧拉角都表示为向量形式，那么四元数和欧拉角的换算公式如下：
+
+$$\mathbf{q}=\begin{bmatrix}w\\x\\y\\z\end{bmatrix}=\begin{bmatrix}cos(\varphi/2)cos(\theta/2)cos(\psi/2)+sin(\varphi/2)sin(\theta/2)sin(\psi/2)\\sin(\varphi/2)cos(\theta/2)cos(\psi/2)-cos(\varphi/2)sin(\theta/2)sin(\psi/2)\\cos(\varphi/2)sin(\theta/2)cos(\psi/2)+sin(\varphi/2)cos(\theta/2)sin(\psi/2)\\cos(\varphi/2)cos(\theta/2)sin(\psi/2)-sin(\varphi/2)sin(\theta/2)cos(\psi/2)\end{bmatrix}$$
+
+$$\begin{bmatrix}\varphi\\\theta\\\psi\end{bmatrix}=\begin{bmatrix}atan2(2(wx+yz),1-2(x^2+y^2))\\arcsin(2(wy-zx))\\atan2(2(wz+xy),1-2(y^2+z^2))\end{bmatrix}$$
 
 ###References
 [维基百科：欧拉角](http://en.wikipedia.org/wiki/Euler_angles)  
