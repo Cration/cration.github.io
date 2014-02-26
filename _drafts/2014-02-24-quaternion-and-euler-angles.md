@@ -43,7 +43,13 @@ $$\vec u=(u_x,u_y,u_z)=u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k}$$
 
 且旋转角为$\theta$，旋转方向为顺着轴向量看去的顺时针，那么描述该旋转的四元数为：
 
-$$\mathbf{q}=e^{{frac{1}{2}}\theta(u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k})}$$
+$$\mathbf{q}=e^{ {\frac{1}{2}}\theta(u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k})}=cos\frac{1}{2}\theta+(u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k})sin\frac{1}{2}\theta$$
+
+　　对于点$P(p_x,p_y,p_z)$，有向量$\vec{OP}=(p_x,p_y,p_z)$，我们将其写成四元数的形式：
+
+$$\mathbf{p}=0+p_x\mathbf{i}+p_y\mathbf{j}+p_z\mathbf{k}$$
+
+　　将$P$点绕轴向量$\vec u$旋转$\theta$角后得到的点记为$P^'$ 。
 
 ###References
 [维基百科：欧拉角](http://en.wikipedia.org/wiki/Euler_angles)  
