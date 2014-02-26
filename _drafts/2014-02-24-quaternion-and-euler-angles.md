@@ -29,13 +29,21 @@ tags: [数学, 四轴]
 
 ##四元数
 
-　　四元数是复数在四维空间的扩展，由[哈密顿](http://zh.wikipedia.org/wiki/%E5%A8%81%E5%BB%89%C2%B7%E7%9B%A7%E9%9B%B2%C2%B7%E5%93%88%E5%AF%86%E9%A0%93)首次提出。从形式上看，四元数是由$1$和$i$、$j$、$k$线性组合而成，其中$i$、$j$、$k$和复数中的$i$类似，定义如下：
+　　四元数是复数在四维空间的扩展，由[哈密顿](http://zh.wikipedia.org/wiki/%E5%A8%81%E5%BB%89%C2%B7%E7%9B%A7%E9%9B%B2%C2%B7%E5%93%88%E5%AF%86%E9%A0%93)首次提出。从形式上看，四元数是由$1$和$\mathbf{i}$、$\mathbf{j}$、$\mathbf{k}$线性组合而成，其中$\mathbf{i}$、$\mathbf{j}$、$\mathbf{k}$和复数中的$\mathbf{i}$类似，定义如下：
 
-$$i^2=j^2=k^2=ijk=-1$$
+$$\mathbf{i}^2=\mathbf{j}^2=\mathbf{k}^2=\mathbf{ijk}=-1$$
 
-　　$i$、$j$、$k$之间的运算关系还有：$ij=k$、$jk=i$、$ki=j$、$ji=-k$、$kj=-i$、$ik=-j$。注意到，这里交换律是不成立的。四元数的运算定义和运算法则，这里就不再介绍了，有需要可以参考[维基百科](http://en.wikipedia.org/wiki/Quaternion)。
+　　$\mathbf{i}$、$\mathbf{j}$、$\mathbf{k}$之间的运算关系还有：$\mathbf{ij}=\mathbf{k}$、$\mathbf{jk}=\mathbf{i}$、$\mathbf{ki}=\mathbf{j}$、$\mathbf{ji}=-\mathbf{k}$、$\mathbf{kj}=-\mathbf{i}$、$\mathbf{ik}=-\mathbf{j}$。注意到，这里交换律是不成立的。四元数的运算定义和运算法则，这里就不再介绍了，有需要可以参考[维基百科](http://en.wikipedia.org/wiki/Quaternion)。
 
 　　要理解四元数与姿态的联系，首先得从欧拉旋转定理说起。欧拉旋转定理表明，任意的旋转序列等价于绕某个轴的单次旋转。如果我们能描述这个轴和旋转的角度，就能描述整个旋转序列等价的单次旋转。
+
+　　若存在轴向量
+
+$$\vec u=(u_x,u_y,u_z)=u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k}$$
+
+且旋转角为$\theta$，旋转方向为顺着轴向量看去的顺时针，那么描述该旋转的四元数为：
+
+$$\mathbf{q}=e^{{frac{1}{2}}\theta(u_x\mathbf{i}+u_y\mathbf{j}+u_z\mathbf{k})}$$
 
 ###References
 [维基百科：欧拉角](http://en.wikipedia.org/wiki/Euler_angles)  
