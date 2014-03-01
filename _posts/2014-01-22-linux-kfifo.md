@@ -177,6 +177,8 @@ EXPORT_SYMBOL(__kfifo_out);
 
 　　无锁循环队列的应用范围很广泛，例如：在低频单片机中，串口接收数据（中断模式）可以将ISR分为top half和bottom half，top half负责接收数据并将数据存放到循环队列中，而bottom half负责从队列中取出数据并处理数据。用类似以上的实现，可以减少一个锁，从而实现更高的并发度和资源利用率。
 
+-----------------------------------------------------------------
+
 ###References
 [Why computers represent signed integers using two's complement](http://igoro.com/archive/why-computers-represent-signed-integers-using-twos-complement/)  
 [透过Linux内核看无锁编程](http://www.ibm.com/developerworks/cn/linux/l-cn-lockfree/index.html?ca=dat-cn-0121)  

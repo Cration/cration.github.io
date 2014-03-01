@@ -212,6 +212,8 @@ LoopIn2:
 }
 {% endhighlight %}
 
+-----------------------------------------------------------------
+
 ###References
 [维基百科：色彩空间](http://en.wikipedia.org/wiki/Color_space)  
 [维基百科：色彩模型](http://en.wikipedia.org/wiki/Color_model)  

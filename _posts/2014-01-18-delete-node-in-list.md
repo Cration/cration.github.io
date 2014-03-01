@@ -76,6 +76,8 @@ void remove_if(node ** head, remove_fn rm)
 
 　　二、教科书式方法需要prev域的原因是，需要找到当前节点的前驱的next域，以改变其后继。从这里我们可以看到，删除链表节点的本质是改变前驱的next指针域。而改变next指针域并不需要对象的地址，只需要获取next指针域的地址即可，在这里，我们通过二级指针curr来保存next域的地址，达到修改前驱的next域的目的。同样，换一个思路来看，curr实际上保存的是当前节点的前驱的位置，在遍历链表时，curr与entry同步遍历，相当于同时保存了一前一后的两个节点位置，因此不需要prev域。
 
+-----------------------------------------------------------------
+
 ###References
 
 [http://coolshell.cn/articles/8990.html](http://coolshell.cn/articles/8990.html)  

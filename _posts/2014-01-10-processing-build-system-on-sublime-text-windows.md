@@ -46,7 +46,9 @@ tags: [processing, sublime text]
     }
 {{ endhighlight }}
 
-###参考
+-----------------------------------------------------------------
+
+###References
 
 【1】[http://ericfickes.tumblr.com/post/50480590889/processing-build-system-for-sublime-osx](http://ericfickes.tumblr.com/post/50480590889/processing-build-system-for-sublime-osx)  
 【2】[sublime text 3 下载](http://www.sublimetext.com/3)  

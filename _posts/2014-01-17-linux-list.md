@@ -63,6 +63,8 @@ struct list_head{
 
 　　2014年01月18日更新：__mptr可以起到类型检查的作用，若传入的ptr不是member类型的指针，则会给出警告。
 
+-----------------------------------------------------------------
+
 ###References
 
 [深入分析Linux内核链表](http://www.ibm.com/developerworks/cn/linux/kernel/l-chain/)
