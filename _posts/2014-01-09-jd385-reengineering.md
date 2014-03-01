@@ -53,3 +53,4 @@ update: 2014-03-01
 [Low Dropout CMOS Voltage Regulators LM6206N3](http://www.mikrocontroller.net/attachment/193855/LM6206N3.pdf)  
 [MPU-6000 and MPU-6050 Product Specification Revision 3.4](http://invensense.com/mems/gyro/documents/PS-MPU-6000A-00v3.4.pdf)  
 [MPU-6000/MPU-6050 9-Axis Evaluation Board User Guide](http://invensense.com/mems/gyro/documents/AN-MPU-6000EVB.pdf)  
+[MINI54ZAN datasheet](http://www.icbase.com/File/PDF/NUV/NUV00161201.pdf)  
