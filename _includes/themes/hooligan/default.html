@@ -101,13 +101,20 @@
                   <span class="hidden-desktop">ATOM Feed</span>
                   </a>
                 </li>
-              {% if site.author.github %}
+                {% if site.author.email %}
+                <!--li>
+                  <a class="zocial email icon" target="_blank" href="mailto:{{ site.author.email }}">
+                  <span class="hidden-desktop">E-mail</span>
+                  </a>
+                </li-->
+                {% endif %}
+                {% if site.author.github %}
                 <li>
                   <a href="https://github.com/{{ site.author.github }}" class="zocial github icon" target="_blank">
                     <span class="hidden-desktop">Github</span>
                   </a>
                 </li>
-              {% endif %}
+                {% endif %}
             </ul>
           </div>
         </div>
