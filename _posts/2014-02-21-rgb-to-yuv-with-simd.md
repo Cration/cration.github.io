@@ -4,6 +4,7 @@ title: "使用SSE实现RGB到YUV的色彩空间转换"
 description: "　　本文给出了一种使用SSE指令集将图像进行RGB到YUV的色彩空间转换的实现。"
 category: "program"
 tags: [asm, 编程技巧]
+update: 2014-03-18
 ---
 {% include JB/setup %}
 
@@ -219,3 +220,4 @@ LoopIn2:
 [维基百科：色彩模型](http://en.wikipedia.org/wiki/Color_model)  
 [维基百科：SIMD](http://en.wikipedia.org/wiki/SIMD)  
 [Optimizing YUV-RGB Color Space Conversion Using Intel’s SIMD Technology](http://lestourtereaux.free.fr/papers/data/yuvrgb.pdf)  
+[Using MMX™ Instructions to Convert RGB To YUV Color Conversion](http://software.intel.com/sites/landingpage/legacy/mmx/MMX_App_RGB_YUV.pdf)  
