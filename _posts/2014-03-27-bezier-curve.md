@@ -11,7 +11,7 @@ tags: [数学, javascript, 贝塞尔曲线]
 
 　　n次贝塞尔曲线的一般定义：给定点$P_0$、$P_1$、$P_2$ ... $P_n$，其贝赛尔曲线为：
 
-$$B(t)=\sum_{i=0}^{n}$$\begin{pmatrix}n\\i\end{pmatrix}P_i(1-t)^{n-i}t^i
+$$B(t)=\sum_{i=0}^{n}\begin{pmatrix}n\\i\end{pmatrix}P_i(1-t)^{n-i}t^i$$
 
 
 <div style="text-align: center;">
