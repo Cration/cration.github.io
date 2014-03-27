@@ -170,6 +170,7 @@ $$B_{P_0 P_1 \dots P_n}(t)=(1-t)B_{P_0 P_1 \dots P_{n-1}}(t)+tB_{P_1 P_2 \dots P
 </script>
 
 　　实现代码如下：
+
     <div style="text-align: center;">
         <canvas id="democanvas"  width="300px" height="300px"></canvas>
     </div>
