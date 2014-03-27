@@ -14,161 +14,161 @@ tags: [数学, javascript, 贝塞尔曲线]
 $$B(t)=\sum_{i=0}^{n}$$
 
 
-    <div style="text-align: center;">
-        <canvas id="democanvas"  width="300px" height="300px"></canvas>
-    </div>
-    <script type="text/javascript">
-        var P0 = {x:6, y:6};
-        var P1 = {x:100, y:250};
-        var P2 = {x:150, y:50};
-        var P3 = {x:240, y:260};
-        var P4 = {x:290, y:20};
-        // var points = new Array();
-        // points[0] = {x:60, y:200};
-        // points[1] = {x:240, y:60};
-        // points[2] = {x:290, y:200};
-        // points[3] = {x:70, y:264};
-        // points[4] = {x:25, y:20};
+<div style="text-align: center;">
+    <canvas id="democanvas"  width="300px" height="300px"></canvas>
+</div>
+<script type="text/javascript">
+    var P0 = {x:6, y:6};
+    var P1 = {x:100, y:250};
+    var P2 = {x:150, y:50};
+    var P3 = {x:240, y:260};
+    var P4 = {x:290, y:20};
+    // var points = new Array();
+    // points[0] = {x:60, y:200};
+    // points[1] = {x:240, y:60};
+    // points[2] = {x:290, y:200};
+    // points[3] = {x:70, y:264};
+    // points[4] = {x:25, y:20};
 
-        (function()
+    (function()
+    {
+        var canvas = document.getElementById('democanvas');
+
+        if(canvas.getContext)
+        {  
+            var ctx = canvas.getContext('2d');  
+
+            renderUI(ctx, arguments);
+
+            var arg = arguments;
+            window.setInterval(function(){
+                strokeBezierLine(ctx, arg);
+            }, 30);
+        } 
+
+        function strokeLine(ctx,P0,P1){
+            ctx.beginPath(); 
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = "rgba(205,205,205,1)";
+            ctx.moveTo(P0.x,P0.y);
+            ctx.lineTo(P1.x,P1.y);
+            ctx.stroke();
+        }
+
+        function strokeCircle(ctx,p,r)
         {
-            var canvas = document.getElementById('democanvas');
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, r, 0, Math.PI*2, true); 
+            ctx.stroke();
+        }
 
-            if(canvas.getContext)
-            {  
-                var ctx = canvas.getContext('2d');  
+        var bezierPoints = new Array();
+        var t = 0;
+        var n = 0;
+        var N = 100;
 
-                renderUI(ctx, arguments);
+        function strokeBezierLine(ctx, arguments)
+        {
+            ctx.clearRect(0,0,300,300);
+            renderUI(ctx, arguments);
+            if(n > N)
+            {
+                n = 0;
+                bezierPoints.length = 0;
+            }
+            t = n / N;
+            bezierPoints[n] = drawMidLine(ctx, t, "rgba(255,0,0,1)", arguments);
+            ++n;
 
-                var arg = arguments;
-                window.setInterval(function(){
-                    strokeBezierLine(ctx, arg);
-                }, 30);
-            } 
-
-            function strokeLine(ctx,P0,P1){
+            for (var i = 1, len = bezierPoints.length; i < len; ++i)
+            {
                 ctx.beginPath(); 
-                ctx.lineWidth = 3;
+                ctx.lineWidth = 2;
                 ctx.lineCap = 'round';
-                ctx.strokeStyle = "rgba(205,205,205,1)";
-                ctx.moveTo(P0.x,P0.y);
-                ctx.lineTo(P1.x,P1.y);
+                ctx.strokeStyle = "rgba(0, 255, 255, 1)";
+                ctx.moveTo(bezierPoints[i-1].x, bezierPoints[i-1].y);
+                ctx.lineTo(bezierPoints[i].x, bezierPoints[i].y);
                 ctx.stroke();
             }
+        }
 
-            function strokeCircle(ctx,p,r)
+        function drawMidLine(ctx, t, color, arguments)
+        {
+            if (arguments.length > 2)
             {
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, r, 0, Math.PI*2, true); 
-                ctx.stroke();
-            }
+                var arrP = new Array();
 
-            var bezierPoints = new Array();
-            var t = 0;
-            var n = 0;
-            var N = 100;
+                arrP[0] = {
+                    x: (1-t)*arguments[0].x + t*arguments[1].x, 
+                    y: (1-t)*arguments[0].y + t*arguments[1].y
+                };
 
-            function strokeBezierLine(ctx, arguments)
-            {
-                ctx.clearRect(0,0,300,300);
-                renderUI(ctx, arguments);
-                if(n > N)
+                for (var i = 1, len = arguments.length; i < len - 1; ++i)
                 {
-                    n = 0;
-                    bezierPoints.length = 0;
-                }
-                t = n / N;
-                bezierPoints[n] = drawMidLine(ctx, t, "rgba(255,0,0,1)", arguments);
-                ++n;
+                    arrP[i] = {
+                        x: (1-t)*arguments[i].x + t*arguments[i+1].x, 
+                        y: (1-t)*arguments[i].y + t*arguments[i+1].y
+                    };
 
-                for (var i = 1, len = bezierPoints.length; i < len; ++i)
-                {
                     ctx.beginPath(); 
                     ctx.lineWidth = 2;
                     ctx.lineCap = 'round';
-                    ctx.strokeStyle = "rgba(0, 255, 255, 1)";
-                    ctx.moveTo(bezierPoints[i-1].x, bezierPoints[i-1].y);
-                    ctx.lineTo(bezierPoints[i].x, bezierPoints[i].y);
+                    ctx.strokeStyle = color;
+                    ctx.moveTo(arrP[i-1].x, arrP[i-1].y);
+                    ctx.lineTo(arrP[i].x, arrP[i].y);
                     ctx.stroke();
                 }
+
+                color = changeColor(color);
+                return drawMidLine(ctx, t, color, arrP);
             }
-
-            function drawMidLine(ctx, t, color, arguments)
+            else
             {
-                if (arguments.length > 2)
-                {
-                    var arrP = new Array();
-
-                    arrP[0] = {
+                var P = {
                         x: (1-t)*arguments[0].x + t*arguments[1].x, 
                         y: (1-t)*arguments[0].y + t*arguments[1].y
                     };
-
-                    for (var i = 1, len = arguments.length; i < len - 1; ++i)
-                    {
-                        arrP[i] = {
-                            x: (1-t)*arguments[i].x + t*arguments[i+1].x, 
-                            y: (1-t)*arguments[i].y + t*arguments[i+1].y
-                        };
-
-                        ctx.beginPath(); 
-                        ctx.lineWidth = 2;
-                        ctx.lineCap = 'round';
-                        ctx.strokeStyle = color;
-                        ctx.moveTo(arrP[i-1].x, arrP[i-1].y);
-                        ctx.lineTo(arrP[i].x, arrP[i].y);
-                        ctx.stroke();
-                    }
-
-                    color = changeColor(color);
-                    return drawMidLine(ctx, t, color, arrP);
-                }
-                else
-                {
-                    var P = {
-                            x: (1-t)*arguments[0].x + t*arguments[1].x, 
-                            y: (1-t)*arguments[0].y + t*arguments[1].y
-                        };
-                    return P;
-                }
+                return P;
             }
+        }
 
-            function changeColor(color)
+        function changeColor(color)
+        {
+            switch (color)
             {
-                switch (color)
-                {
-                    case "rgba(255,0,0,1)":
-                        color = "rgba(0,255,0,1)";
-                        break;
-                    case "rgba(0,255,0,1)":
-                        color = "rgba(0,0,255,1)";
-                        break;
-                    case "rgba(0,0,255,1)":
-                        color = "rgba(255,0,0,1)";
-                        break
-                    default:
-                        color = "rgba(255,0,0,1)";
-                        break;
-                }
-                return color;
+                case "rgba(255,0,0,1)":
+                    color = "rgba(0,255,0,1)";
+                    break;
+                case "rgba(0,255,0,1)":
+                    color = "rgba(0,0,255,1)";
+                    break;
+                case "rgba(0,0,255,1)":
+                    color = "rgba(255,0,0,1)";
+                    break
+                default:
+                    color = "rgba(255,0,0,1)";
+                    break;
             }
+            return color;
+        }
 
-            function renderUI(ctx, arguments)
+        function renderUI(ctx, arguments)
+        {
+            //绘制起始点、控制点、终点
+            for (var i = 0, len = arguments.length; i < len - 1; i++)
             {
-                //绘制起始点、控制点、终点
-                for (var i = 0, len = arguments.length; i < len - 1; i++)
-                {
-                    strokeLine(ctx, arguments[i], arguments[i+1]);
-                }
-
-                ctx.strokeStyle = "rgba(0,0,0,1)";
-                for (var i = 0, len = arguments.length; i < len; i++)
-                {
-                    strokeCircle(ctx, arguments[i], 3);
-                }
+                strokeLine(ctx, arguments[i], arguments[i+1]);
             }
-        })(P0, P1, P2, P3, P4);
-    </script>
+
+            ctx.strokeStyle = "rgba(0,0,0,1)";
+            for (var i = 0, len = arguments.length; i < len; i++)
+            {
+                strokeCircle(ctx, arguments[i], 3);
+            }
+        }
+    })(P0, P1, P2, P3, P4);
+</script>
 
 -----------------------------------------------------------------
 
