@@ -15,7 +15,9 @@ $$B(t)=\sum_{i=0}^{n}\begin{pmatrix}n\\i\end{pmatrix}P_i(1-t)^{n-i}t^i$$
 
 　　也可以用递归的方式表达，用$B_{P_0 P_1 \dots P_n}$表示由点$P_0 P_1 \dots P_n$确定的贝塞尔曲线，那么
 
-$$$$
+$$B_{P_0 P_1 \dots P_n}(t)=(1-t)B_{P_0 P_1 \dots P_{n-1}}(t)+B_{P_1 P_2 \dots P_n}(t)$$
+
+　　用自然语言来描述，即：n次贝塞尔曲线是由n-1次贝塞尔曲线插值得到的。
 
 <div style="text-align: center;">
     <canvas id="democanvas"  width="300px" height="300px"></canvas>
