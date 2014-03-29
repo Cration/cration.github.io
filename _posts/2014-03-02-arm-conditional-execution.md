@@ -3,7 +3,7 @@ layout: post
 title: "ARM中的条件执行指令"
 description: "　　记录一次调试经历，并借此简单介绍ARM下的条件执行指令的概念。"
 category: "Embedded"
-tags: [ARM, asm]
+tags: [ARM, asm, 嵌入式]
 ---
 {% include JB/setup %}
 
