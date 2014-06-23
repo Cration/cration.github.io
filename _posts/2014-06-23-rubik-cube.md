@@ -46,10 +46,10 @@ char backBridgeEdge[12][10] = {"", "BL", "", "br", "BBDD", "BBD", "BB", "BBd", "
 
 //  棱位搭桥
 // char throughBridgeEdgePos[12][10] = {"", "", "MDmS", "RRSS", "DSS", "DDSS", "dSS", "SS", "rSS", "KKRSS", "KKrSS", "RSS"};
-char throughBridgeEdgePos[12][10] = {"", "", "LrMDlRmfBS", "RRffBBSS", "DffBBSS", "DDffBBSS", "dffBBSS", "ffBBSS", "rffBBSS", "uuDDKKRffBBSS", "uuDDKKrffBBSS", "RffBBSS"};
+char throughBridgeEdgePos[12][20] = {"", "", "LrMDlRmfBS", "RRffBBSS", "DffBBSS", "DDffBBSS", "dffBBSS", "ffBBSS", "rffBBSS", "uuDDKKRffBBSS", "uuDDKKrffBBSS", "RffBBSS"};
 //  棱位反搭桥
 // char backBridgeEdgePos[12][10] = {"", "", "sMdm", "SSRR", "SSd", "SSDD", "SSD", "SS", "SSR", "SSrKK", "SSRKK", "SSr"};
-char backBridgeEdgePos[12][10] = {"", "", "sLrMdlRm", "ffBBSSRR", "ffBBSSd", "ffBBSSDD", "ffBBSSD", "ffBBSS", "ffBBSSR", "ffBBSSruuDDKK", "ffBBSSRuuDDKK", "ffBBSSr"};
+char backBridgeEdgePos[12][20] = {"", "", "sLrMdlRm", "ffBBSSRR", "ffBBSSd", "ffBBSSDD", "ffBBSSD", "ffBBSS", "ffBBSSR", "ffBBSSruuDDKK", "ffBBSSRuuDDKK", "ffBBSSr"};
 
 //  翻角顺
 char adjustCorner1[] = "RUrURUUrluLulUUL";
