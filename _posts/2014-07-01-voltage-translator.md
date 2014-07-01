@@ -15,6 +15,8 @@ tags: []
 
 ###分析
 
+[1](#编号1)
+
 　　对于数字信号的传输，常见的有以下几种情况：
 
 <table class="table table-bordered table-striped table-condensed">
