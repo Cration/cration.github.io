@@ -9,7 +9,7 @@ tags: []
 
 　　在某个蓝牙模块的应用中发现一个3.3V和5V逻辑电平转换电路，用在蓝牙UART的传输中。原理图如下：
 
-![原理图]({{site.img_path}}/voltage_translator_sch.png)
+![原理图]({{site.img_path}}/voltage_translator_schematic.png)
 
 ###分析
 
