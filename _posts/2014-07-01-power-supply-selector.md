@@ -3,7 +3,8 @@ layout: post
 title: "Arduino中的电源选择电路"
 description: "　　简要分析了Arduino中的电源选择电路。"
 category: "electronic"
-tags: []
+tags: [电路]
+update: 2014-07-02
 ---
 {% include JB/setup %}
 

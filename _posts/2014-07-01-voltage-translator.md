@@ -3,7 +3,7 @@ layout: post
 title: "浅析一个逻辑电平转换电路"
 description: "　　简要分析了一个逻辑电平转换电路。"
 category: "electronic"
-tags: []
+tags: [电路]
 ---
 {% include JB/setup %}
 
