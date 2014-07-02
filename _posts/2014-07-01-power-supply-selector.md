@@ -23,7 +23,7 @@ tags: []
 
 ![PMOS as diode]({{site.img_path}}/voltage_translator_PMOS_as_diode.png)
 
-　　此电路能实现与二极管一样的防反接功能，而且压降极小。
+　　此电路能实现与二极管一样的防反接功能，而且压降极小。在上电时，5V电压经过PMOS的体二极管，于是PMOS的S极电压约为4.3V，由于G极接地，产生了-4.3V的V<sub>gs</sub>，让PMOS导通，于是S极电压升高至5V。
 
 -------------------------------------------
 
