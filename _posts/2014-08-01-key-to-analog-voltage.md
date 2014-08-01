@@ -7,7 +7,7 @@ tags: [电路]
 ---
 {% include JB/setup %}
 
-　　不久前，改进了[Makeblock]的一个按键模块，使其支持多个按键同时按下的检测。原理图如下：
+　　不久前，改进了 [Makeblock](http://www.makeblock.cc) 的一个按键模块，使其支持多个按键同时按下的检测。原理图如下：
 
 ![原理图]({{site.img_path}}/key_to_adc.png)
 
