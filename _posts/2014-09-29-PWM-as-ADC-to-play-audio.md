@@ -29,6 +29,14 @@ $$f=\frac{1}{2\pi RC}$$
 
 ![双路PWM]({{site.img_path}}/PWM_as_DAC_2.png)
 
+　　或者，更为丧心病狂的三路PWM合成。
+
+![三路PWM]({{site.img_path}}/PWM_as_DAC_3.png)
+
+　　对于双路PWM合成，有一个高精度同样也更加复杂的方案：
+
+![高精度双路PWM]({{site.img_path}}/PWM_as_DAC_4.png)
+
 
 
 -------------------------------------------
