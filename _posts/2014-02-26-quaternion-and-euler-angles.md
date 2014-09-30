@@ -75,7 +75,7 @@ $$\begin{bmatrix}\varphi\\\theta\\\psi\end{bmatrix}=\begin{bmatrix}atan2(2(wx+yz
 
 ###References
 [维基百科：欧拉角](http://en.wikipedia.org/wiki/Euler_angles)  
-[四元数和旋转以及yaw-pitch-roll-的含义](http://www.wy182000.com/2012/07/17/quaternion%E5%9B%9B%E5%85%83%E6%95%B0%E5%92%8C%E6%97%8B%E8%BD%AC%E4%BB%A5%E5%8F%8Ayaw-pitch-roll-%E7%9A%84%E5%90%AB%E4%B9%89/)  
+[四元数和旋转以及yaw-pitch-roll的含义](http://www.wy182000.com/2012/07/17/quaternion%E5%9B%9B%E5%85%83%E6%95%B0%E5%92%8C%E6%97%8B%E8%BD%AC%E4%BB%A5%E5%8F%8Ayaw-pitch-roll-%E7%9A%84%E5%90%AB%E4%B9%89/)  
 [数的创生（四）哈密尔顿的四元数](http://songshuhui.net/archives/69990)  
 [维基百科：欧拉旋转定理](http://en.wikipedia.org/wiki/Euler%27s_rotation_theorem)  
 [维基百科：四元数与空间旋转](http://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation)  
