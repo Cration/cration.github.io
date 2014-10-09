@@ -2,8 +2,8 @@
 layout: post
 title: "多键盘布局共存的实现"
 description: "　　在Win 8.1下实现了dvorak和qwerty布局的共存和切换。"
-category: "electronic"
-tags: [电路]
+category: "work"
+tags: [dvorak]
 ---
 {% include JB/setup %}
 
