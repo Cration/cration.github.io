@@ -51,6 +51,18 @@ tags: [ftp, sublime text]
 
 　　接下来是按照sublime text的FTP插件，首先按下“ctrl+shift+P”，输入install，稍等片刻后在弹出的输入框内输入SFTP，选择“SFTP”插件进行安装。当然，首先要确认已经安装了sublime text的插件管理器，安装方法参见[这里](https://sublime.wbond.net/installation)。
 
+　　sublime text 2 的插件管理安装代码：
+
+{% higlight python %}
+import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')
+{% endhighlight %}
+
+　　Sublime text 3 的插件管理安装代码：
+
+{% higlight python %}
+import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+{% endhighlight %}
+
 　　SFTP插件安装完成后，File菜单中会出现“SFTP/FTP”的选项。如下图：
 
 ![File菜单]({{site.img_path}}/sublime_text_sftp_1.png)
