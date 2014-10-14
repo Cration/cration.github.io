@@ -427,3 +427,6 @@ ul.posts li p.excerpt {
     margin: 0 auto;
 }
 
+.center-box .center-img {
+    text-align: center;
+}
