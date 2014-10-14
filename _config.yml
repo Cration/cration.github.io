@@ -113,3 +113,4 @@ JB :
   # where [HELPER] is the name of the helper you are overriding.
 
 img_path: /assets/images
+resource_path: /assets/resources
