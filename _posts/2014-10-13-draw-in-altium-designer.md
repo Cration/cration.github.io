@@ -11,10 +11,11 @@ tags: [PCB]
 
 　　若是绘制图案，可以通过插件 PCB Logo Creator 导入单色 bmp 图片，操作步骤如下。
 
-[下载插件：PCB Logo Creator]({{site.resource_path}}/Altium Designer 2013 PCB Logo Creator.zip)  
+　　[下载插件：PCB Logo Creator]({{site.resource_path}}/Altium Designer 2013 PCB Logo Creator.zip)  
 
 　　首先，点击菜单栏的 "DXP->Run Script..."。
 
+{:.center}
 ![PCB_Logo_Creator_1]({{site.img_path}}/PCB_Logo_Creator_1.png)
 
 　　弹出一个对话框。点击对话框左下角的 "Browse"，打开刚才下载的插件安装包，选择 "PCBLogoCreator.PRJSCR"，选择 "Converter.PAS"，点击 "OK".

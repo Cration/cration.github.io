@@ -422,3 +422,8 @@ ul.posts li p.excerpt {
     padding: 0.8em;
 }*/
 
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
