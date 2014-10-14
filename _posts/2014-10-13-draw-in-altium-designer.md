@@ -9,11 +9,11 @@ tags: [PCB]
 
 　　在PCB设计过程中，可能需要通过丝印来绘制图案或文字。
 
-#### 绘制文字
+### 绘制文字
 
 　　如果仅仅是绘制文字，那就很简单，直接快捷键 "P->S"，然后输入文字即可。
 
-#### 绘制图案
+### 绘制图案
 
 　　若是绘制图案，可以通过插件 PCB Logo Creator 导入单色 bmp 图片，操作步骤如下。
 
@@ -37,7 +37,8 @@ tags: [PCB]
 {:.center}
 ![PCB_Logo_Creator_4]({{site.img_path}}/PCB_Logo_Creator_4.png)
 
-#### 镂空、开孔
+
+### 镂空、开孔
 
 　　如果我们要在 top overlay 显示图中的 "Makeblock" 图案和 "Hello, world!" 文字，并且周围也是大块丝印。可以按照如下操作。
 
