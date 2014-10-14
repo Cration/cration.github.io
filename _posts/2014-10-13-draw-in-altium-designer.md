@@ -21,7 +21,7 @@ tags: [PCB]
 
 ![PCB_Logo_Creator_2]({{site.img_path}}/PCB_Logo_Creator_2.png)
 
-　　在弹出的对话框中点击 "Load"，选择一张单色位图（monochrome bitmap），选择图案在哪一层，然后点击 "Convert"完成转换。注意到下方有三个选项，分别是__反色、X镜像、Y镜像__。
+　　在弹出的对话框中点击 "Load"，选择一张单色位图（monochrome bitmap），选择图案在哪一层，然后点击 "Convert"完成转换。注意到下方有三个选项，分别是 __反色、X镜像、Y镜像__ 。
 
 ![PCB_Logo_Creator_3]({{site.img_path}}/PCB_Logo_Creator_3.png)
 
