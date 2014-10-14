@@ -15,18 +15,17 @@ tags: [PCB]
 
 　　首先，点击菜单栏的 "DXP->Run Script..."。
 
-{:.center}
-![PCB_Logo_Creator_1]({{site.img_path}}/PCB_Logo_Creator_1.png)
+{:.center}![PCB_Logo_Creator_1]({{site.img_path}}/PCB_Logo_Creator_1.png)
 
 　　弹出一个对话框。点击对话框左下角的 "Browse"，打开刚才下载的插件安装包，选择 "PCBLogoCreator.PRJSCR"，选择 "Converter.PAS"，点击 "OK".
 
-->![PCB_Logo_Creator_2]({{site.img_path}}/PCB_Logo_Creator_2.png)<-
+{:.center}![PCB_Logo_Creator_2]({{site.img_path}}/PCB_Logo_Creator_2.png)
 
 　　在弹出的对话框中点击 "Load"，选择一张单色位图（monochrome bitmap），选择图案在哪一层，然后点击 "Convert"完成转换。注意到下方有三个选项，分别是 __反色、X镜像、Y镜像__ 。
 
-![PCB_Logo_Creator_3]({{site.img_path}}/PCB_Logo_Creator_3.png)
+{:.center}![PCB_Logo_Creator_3]({{site.img_path}}/PCB_Logo_Creator_3.png)
 
-![PCB_Logo_Creator_4]({{site.img_path}}/PCB_Logo_Creator_4.png)
+{:.center}![PCB_Logo_Creator_4]({{site.img_path}}/PCB_Logo_Creator_4.png)
 
 -------------------------------------------
 
