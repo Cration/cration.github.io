@@ -427,6 +427,14 @@ ul.posts li p.excerpt {
     margin: 0 auto;
 }
 
+
 .center-box .center-img {
-    text-align: center;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 100%;
+    text-align: center; /* 图片默认水平居中 */
+    vertical-align: middle;
+    padding: 0 !important; /* 防止设置边距导致居中失效 */
+    margin: 0 !important;
 }
