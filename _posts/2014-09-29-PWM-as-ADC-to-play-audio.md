@@ -7,7 +7,7 @@ tags: [电路]
 ---
 {% include JB/setup %}
 
-<script src="js/processing.js"></script>
+<script src="processing.js"></script>
 <script type="text/processing" data-processing-target="mycanvas">
 void setup(){
   size(600,300);
