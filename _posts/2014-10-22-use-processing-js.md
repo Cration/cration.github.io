@@ -30,40 +30,80 @@ tags: [processing]
 <script type ="text/processing" data-processing-target="mycanvas">
 
 /**
- * Flocking
- * by Daniel Shiffman.
- *
- * An implementation of Craig Reynold's Boids program to simulate
- * the flocking behavior of birds. Each boid steers itself based on
- * rules of avoidance, alignment, and coherence.
- *
- * Click the mouse to add a new boid.
+ * RGB Cube.
+ * 
+ * The three primary colors of the additive color model are red, green, and blue.
+ * This RGB color cube displays smooth transitions between these colors. 
  */
+ 
+float xmag, ymag = 0;
+float newXmag, newYmag = 0; 
+ 
+void setup()  { 
+  size(640, 360, P3D); 
+  noStroke(); 
+  colorMode(RGB, 1); 
+} 
+ 
+void draw()  { 
+  background(0.5);
+  
+  pushMatrix(); 
+  translate(width/2, height/2, -30); 
+  
+  newXmag = mouseX/float(width) * TWO_PI;
+  newYmag = mouseY/float(height) * TWO_PI;
+  
+  float diff = xmag-newXmag;
+  if (abs(diff) >  0.01) { 
+    xmag -= diff/4.0; 
+  }
+  
+  diff = ymag-newYmag;
+  if (abs(diff) >  0.01) { 
+    ymag -= diff/4.0; 
+  }
+  
+  rotateX(-ymag); 
+  rotateY(-xmag); 
+  
+  scale(90);
+  beginShape(QUADS);
 
-Flock flock;
+  fill(0, 1, 1); vertex(-1,  1,  1);
+  fill(1, 1, 1); vertex( 1,  1,  1);
+  fill(1, 0, 1); vertex( 1, -1,  1);
+  fill(0, 0, 1); vertex(-1, -1,  1);
 
-void setup()
-{
-    size(640, 360);
-    flock = new Flock();
-    // Add an initial set of boids into the system
-    for (int i = 0; i < 150; i++)
-    {
-        flock.addBoid(new Boid(width / 2, height / 2));
-    }
-}
+  fill(1, 1, 1); vertex( 1,  1,  1);
+  fill(1, 1, 0); vertex( 1,  1, -1);
+  fill(1, 0, 0); vertex( 1, -1, -1);
+  fill(1, 0, 1); vertex( 1, -1,  1);
 
-void draw()
-{
-    background(50);
-    flock.run();
-}
+  fill(1, 1, 0); vertex( 1,  1, -1);
+  fill(0, 1, 0); vertex(-1,  1, -1);
+  fill(0, 0, 0); vertex(-1, -1, -1);
+  fill(1, 0, 0); vertex( 1, -1, -1);
 
-// Add a new boid into the System
-void mousePressed()
-{
-    flock.addBoid(new Boid(mouseX, mouseY));
-}
+  fill(0, 1, 0); vertex(-1,  1, -1);
+  fill(0, 1, 1); vertex(-1,  1,  1);
+  fill(0, 0, 1); vertex(-1, -1,  1);
+  fill(0, 0, 0); vertex(-1, -1, -1);
+
+  fill(0, 1, 0); vertex(-1,  1, -1);
+  fill(1, 1, 0); vertex( 1,  1, -1);
+  fill(1, 1, 1); vertex( 1,  1,  1);
+  fill(0, 1, 1); vertex(-1,  1,  1);
+
+  fill(0, 0, 0); vertex(-1, -1, -1);
+  fill(1, 0, 0); vertex( 1, -1, -1);
+  fill(1, 0, 1); vertex( 1, -1,  1);
+  fill(0, 0, 1); vertex(-1, -1,  1);
+
+  endShape();
+  
+  popMatrix(); 
+} 
 
 </script>
 <canvas id="mycanvas"></canvas>
@@ -75,40 +115,80 @@ void mousePressed()
 <script type ="text/processing" data-processing-target="mycanvas">
 
 /**
- * Flocking
- * by Daniel Shiffman.
- *
- * An implementation of Craig Reynold's Boids program to simulate
- * the flocking behavior of birds. Each boid steers itself based on
- * rules of avoidance, alignment, and coherence.
- *
- * Click the mouse to add a new boid.
+ * RGB Cube.
+ * 
+ * The three primary colors of the additive color model are red, green, and blue.
+ * This RGB color cube displays smooth transitions between these colors. 
  */
+ 
+float xmag, ymag = 0;
+float newXmag, newYmag = 0; 
+ 
+void setup()  { 
+  size(640, 360, P3D); 
+  noStroke(); 
+  colorMode(RGB, 1); 
+} 
+ 
+void draw()  { 
+  background(0.5);
+  
+  pushMatrix(); 
+  translate(width/2, height/2, -30); 
+  
+  newXmag = mouseX/float(width) * TWO_PI;
+  newYmag = mouseY/float(height) * TWO_PI;
+  
+  float diff = xmag-newXmag;
+  if (abs(diff) >  0.01) { 
+    xmag -= diff/4.0; 
+  }
+  
+  diff = ymag-newYmag;
+  if (abs(diff) >  0.01) { 
+    ymag -= diff/4.0; 
+  }
+  
+  rotateX(-ymag); 
+  rotateY(-xmag); 
+  
+  scale(90);
+  beginShape(QUADS);
 
-Flock flock;
+  fill(0, 1, 1); vertex(-1,  1,  1);
+  fill(1, 1, 1); vertex( 1,  1,  1);
+  fill(1, 0, 1); vertex( 1, -1,  1);
+  fill(0, 0, 1); vertex(-1, -1,  1);
 
-void setup()
-{
-    size(640, 360);
-    flock = new Flock();
-    // Add an initial set of boids into the system
-    for (int i = 0; i < 150; i++)
-    {
-        flock.addBoid(new Boid(width / 2, height / 2));
-    }
-}
+  fill(1, 1, 1); vertex( 1,  1,  1);
+  fill(1, 1, 0); vertex( 1,  1, -1);
+  fill(1, 0, 0); vertex( 1, -1, -1);
+  fill(1, 0, 1); vertex( 1, -1,  1);
 
-void draw()
-{
-    background(50);
-    flock.run();
-}
+  fill(1, 1, 0); vertex( 1,  1, -1);
+  fill(0, 1, 0); vertex(-1,  1, -1);
+  fill(0, 0, 0); vertex(-1, -1, -1);
+  fill(1, 0, 0); vertex( 1, -1, -1);
 
-// Add a new boid into the System
-void mousePressed()
-{
-    flock.addBoid(new Boid(mouseX, mouseY));
-}
+  fill(0, 1, 0); vertex(-1,  1, -1);
+  fill(0, 1, 1); vertex(-1,  1,  1);
+  fill(0, 0, 1); vertex(-1, -1,  1);
+  fill(0, 0, 0); vertex(-1, -1, -1);
+
+  fill(0, 1, 0); vertex(-1,  1, -1);
+  fill(1, 1, 0); vertex( 1,  1, -1);
+  fill(1, 1, 1); vertex( 1,  1,  1);
+  fill(0, 1, 1); vertex(-1,  1,  1);
+
+  fill(0, 0, 0); vertex(-1, -1, -1);
+  fill(1, 0, 0); vertex( 1, -1, -1);
+  fill(1, 0, 1); vertex( 1, -1,  1);
+  fill(0, 0, 1); vertex(-1, -1,  1);
+
+  endShape();
+  
+  popMatrix(); 
+} 
 
 </script>
 <canvas id="mycanvas"></canvas>
