@@ -57,7 +57,7 @@ ol.linenums
 {
     margin-top: 0;
     margin-bottom: 0;
-    /*text-align: left;*/
+    text-align: left;
 }
 .prettyprint {
     background: #000;
@@ -66,7 +66,6 @@ li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
 {
     color: #555;
     list-style-type: decimal;
-    /*text-align: left;*/
 }
 li.L1, li.L3, li.L5, li.L7, li.L9 {
     background: #111;
