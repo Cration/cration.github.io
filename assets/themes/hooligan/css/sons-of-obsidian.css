@@ -57,8 +57,7 @@ ol.linenums
 {
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
 }
 .prettyprint {
     background: #000;
