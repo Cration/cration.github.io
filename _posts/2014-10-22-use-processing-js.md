@@ -158,6 +158,7 @@ void draw()
         frameCount = 0;
     }
 }
+
 </script>
 <canvas id="mycanvas"></canvas>
 

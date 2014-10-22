@@ -419,3 +419,9 @@ ul.posts li p.excerpt {
     padding-left: 2em;
     color: #999
 }
+
+.content canvas {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
