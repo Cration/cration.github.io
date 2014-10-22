@@ -7,6 +7,14 @@ tags: [电路]
 ---
 {% include JB/setup %}
 
+<div class="spinner">
+  <div class="rect1"></div>
+  <div class="rect2"></div>
+  <div class="rect3"></div>
+  <div class="rect4"></div>
+  <div class="rect5"></div>
+</div>
+
 　　用单片机音频播放的一个常用方法是用DAC输出音频数据，经过音频放大器后驱动喇叭来播放声音。如果所用的单片机没有DAC外设的话，我们也可以使用PWM口来模拟ADC的输出。
 
 　　基本思路：用PWM经过低通滤波器来输出模拟电压，从而实现ADC的功能。
