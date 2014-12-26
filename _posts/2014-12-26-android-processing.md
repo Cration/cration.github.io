@@ -7,9 +7,6 @@ tags: [Processing, Android]
 ---
 {% include JB/setup %}
 
-# 标题
-
-
 Processing 的应用范围越来越广泛，甚至可以用来开发移动端的应用。本文主要介绍在 Windows 上搭建 Processing 的 Android 开发环境的流程。
 
 大致步骤如下：
