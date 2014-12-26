@@ -27,7 +27,7 @@ Processing 的应用范围越来越广泛，甚至可以用来开发移动端的
 
 ![JDK 环境变量]({{site.img_path}}/environment_variables_jdk.png)
 
-### 安装Android_SDK
+### <a name="安装Android_SDK"/>安装 Android SDK
 
 　　打开 [Android 官网](http://developer.android.com/sdk/index.html#Other)，下载 SDK。由于文件在 google 服务器上，可能需要翻墙。这里建议下载不带 SDK 的版本，因为我们要使用 Processing 作为 IDE。
 
@@ -48,11 +48,11 @@ Processing 的应用范围越来越广泛，甚至可以用来开发移动端的
 
 　　以上的第三项根据不同的手机系统平台而定，如果安装的版本不对，可能在后面的编译阶段出现类似 `Unable to resolve target 'android-19'` 的错误，到时候可以再回来安装对应版本的 SDK Platform。错误提示中的 `android-19` 表示需要的 API 版本号是 19。
 
-### 安装Processing
+### <a name="安装Processing"/>安装 Processing
 
 　　打开 [Processing 官网](https://processing.org/download/?processing)，下载对应版本的并安装即可。
 
-### 添加Processing的Android模式
+### <a name="添加Processing的Android模式"/>添加 Processing 的 Android 模式
 
 　　打开 Processing，在右上角找到切换模式的按钮，点击“Add Mode...”，找到“Android Mode”并安装。
 
@@ -62,7 +62,7 @@ Processing 的应用范围越来越广泛，甚至可以用来开发移动端的
 
 　　安装完模式之后，再次点击 Processing IDE 右上角的按钮，切换到 Android 模式。这时会出现弹窗询问 SDK 是否安装，点击“YES”，然后找到安装 SDK 的位置（笔者的电脑上是：`C:\Program Files\adt-bundle-windows-x86_64-20140702\sdk`），点击“Open”。随后 Processing 将以 Android 模式打开。
 
-### 把Processing程序安装到Android手机
+### <a name="把Processing程序安装到Android手机"/>把 Processing 程序安装到 Android 手机
 
 　　将手机用数据线连接上 PC，并打开手机的 USB 调试功能。点击 Processing 菜单栏的 “File -> Examples...”，将打开例程列表。
 　　
