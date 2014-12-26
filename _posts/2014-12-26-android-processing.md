@@ -14,11 +14,11 @@ Processing 的应用范围越来越广泛，甚至可以用来开发移动端的
 
 大致步骤如下：
 
-* [安装 JDK](#安装JDK)
-* [安装 Android SDK](#安装Android_SDK)
-* [安装 Processing](#安装Processing)
-* [添加 Processing 的 Android 模式](#添加Processing的Android模式)
-* [把 Processing 程序安装到 Android 手机](#把Processing程序安装到Android手机)
+* [安装 JDK](###安装JDK)
+* [安装 Android SDK](###安装Android_SDK)
+* [安装 Processing](###安装Processing)
+* [添加 Processing 的 Android 模式](###添加Processing的Android模式)
+* [把 Processing 程序安装到 Android 手机](###把Processing程序安装到Android手机)
 
 
 ### 安装 JDK
@@ -37,10 +37,12 @@ Processing 的应用范围越来越广泛，甚至可以用来开发移动端的
 
 　　打开后，勾选必要的包来安装，可能也需要翻墙安装。一般情况下，需要安装的有：
 
-* Tools: Android SDK Tools
-* Tools: Android SDK Platform-tools
-* Android 4.4.2(API 19): SDK Platform
-* Extras: Google USB Driver
+> * Tools: Android SDK Tools
+> * Tools: Android SDK Platform-tools
+> * Android 4.4.2(API 19): SDK Platform
+> * Extras: Google USB Driver
+
+<br>
 
 ![SDK Manager 安装]({{site.img_path}}/sdk_manager_install.png)
 
