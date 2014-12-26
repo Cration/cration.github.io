@@ -14,11 +14,11 @@ Processing 的应用范围越来越广泛，甚至可以用来开发移动端的
 
 大致步骤如下：
 
-* [安装 JDK](###安装JDK)
-* [安装 Android SDK](###安装Android_SDK)
-* [安装 Processing](###安装Processing)
-* [添加 Processing 的 Android 模式](###添加Processing的Android模式)
-* [把 Processing 程序安装到 Android 手机](###把Processing程序安装到Android手机)
+* [安装 JDK](#安装JDK)
+* [安装 Android SDK](#安装Android_SDK)
+* [安装 Processing](#安装Processing)
+* [添加 Processing 的 Android 模式](#添加Processing的Android模式)
+* [把 Processing 程序安装到 Android 手机](#aaa)
 
 
 ### 安装 JDK
@@ -62,7 +62,7 @@ Processing 的应用范围越来越广泛，甚至可以用来开发移动端的
 
 　　安装完模式之后，再次点击 Processing IDE 右上角的按钮，切换到 Android 模式。这时会出现弹窗询问 SDK 是否安装，点击“YES”，然后找到安装 SDK 的位置（笔者的电脑上是：`C:\Program Files\adt-bundle-windows-x86_64-20140702\sdk`），点击“Open”。随后 Processing 将以 Android 模式打开。
 
-### 把Processing程序安装到Android手机
+### 把Processing程序安装到Android手机(id:aaa)
 
 　　将手机用数据线连接上 PC，并打开手机的 USB 调试功能。点击 Processing 菜单栏的 “File -> Examples...”，将打开例程列表。
 　　
@@ -75,7 +75,7 @@ Processing 的应用范围越来越广泛，甚至可以用来开发移动端的
 
 -----------------------------------------------------------------
 
-###References
+### References
 
 [Bluetooth Android Processing 1](http://arduinobasics.blogspot.com/2013/03/arduino-basics-bluetooth-android.html)  
 [在安卓手机上运行Processing程序的方法](http://www.eefocus.com/zhang700309/blog/14-12/307377_88e74.html)  
