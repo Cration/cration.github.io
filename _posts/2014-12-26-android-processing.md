@@ -55,7 +55,7 @@ Processing 的应用范围越来越广泛，甚至可以用来开发移动端的
 
 ![切换 Processing 模式]({{site.img_path}}/processing_mode.png)
 
-　　有些版本可能看不到“Android Mode”，那么需要手动[下载模式包](({{site.resource_path}}/AndroidMode.zip))并放到正确的目录（笔者的电脑里是：`C:\Users\Cration\Documents\Processing\modes`）下。
+　　有些版本可能看不到“Android Mode”，那么需要手动[下载模式包]({{site.resource_path}}/AndroidMode.zip)并放到正确的目录（笔者的电脑里是：`C:\Users\Cration\Documents\Processing\modes`）下。
 
 　　安装完模式之后，再次点击 Processing IDE 右上角的按钮，切换到 Android 模式。这时会出现弹窗询问 SDK 是否安装，点击“YES”，然后找到安装 SDK 的位置（笔者的电脑上是：`C:\Program Files\adt-bundle-windows-x86_64-20140702\sdk`），点击“Open”。随后 Processing 将以 Android 模式打开。
 
